@@ -30,7 +30,7 @@ body {
     ===================================*/
 
 .logo-custom {
-    max-height: 40px;
+    max-height: auto;
 }
 
 #menu {

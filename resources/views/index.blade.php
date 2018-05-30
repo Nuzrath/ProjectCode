@@ -13,10 +13,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img class="logo-custom" src="assets/img/logo180-50.png" alt=""  /></a>
+                <a class="navbar-brand" href="#"><img class="logo-custom" src="/img/bictlogo.jpg" alt="BICT"  /> BICT</a>
             </div>
             <div class="navbar-collapse collapse move-me">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-left">
                     <li ><a href="#home">HOME</a></li>
                      <li><a href="#features-sec">FEATURES</a></li>
                     <li><a href="#faculty-sec">FACULTY</a></li>
@@ -95,7 +95,7 @@
            
                <div class="col-lg-12  col-md-12 col-sm-12">
                
-        <h2 data-scroll-reveal="enter from the bottom after 0.1s" ><i class="fa fa-circle-o-notch"></i> WELCOME TO THE EDU-CENTER <i class="fa fa-circle-o-notch"></i> </h2>
+        <h2 data-scroll-reveal="enter from the bottom after 0.1s" ><i class="fa fa-circle-o-notch fa-spin"></i> WELCOME TO OUR BICT Institute portal <i class="fa fa-circle-o-notch fa-spin"></i> </h2>
                    </div>
                </div>
              </div>
@@ -189,7 +189,7 @@
                
                  <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
                      <div class="faculty-div">
-                     <img src="assets/img/faculty/1.jpg"  class="img-rounded" />
+                     <img src="/img/faculty/1.jpg"  class="img-rounded" />
                    <h3 >ROXI CHI LUENA </h3>
                  <hr />
                          <h4>Desigining <br /> Department</h4>
@@ -202,7 +202,7 @@
                    </div>
                  <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
                      <div class="faculty-div">
-                     <img src="assets/img/faculty/2.jpg"  class="img-rounded" />
+                     <img src="/img/faculty/2.jpg"  class="img-rounded" />
                    <h3 >JANE DEO ALEX</h3>
                  <hr />
                          <h4>Enginering <br /> Department</h4>
@@ -215,7 +215,7 @@
                    </div>
                <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
                      <div class="faculty-div">
-                     <img src="assets/img/faculty/3.jpg" class="img-rounded" />
+                     <img src="/img/faculty/3.jpg" class="img-rounded" />
                    <h3 >RUBY DECORSA</h3>
                  <hr />
                          <h4>Management <br /> Department</h4>
@@ -249,7 +249,7 @@
 
            <div class="row set-row-pad" >
            <div class="col-lg-6 col-md-6 col-sm-6 " data-scroll-reveal="enter from the bottom after 0.4s" >
-                 <img src="assets/img/building.jpg" class="img-thumbnail" />
+                 <img src="/img/building.jpg" class="img-thumbnail" />
            </div>
                <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
                    <div class="panel-group" id="accordion">
