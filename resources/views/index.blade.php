@@ -1,7 +1,7 @@
 ﻿
 <!-- This is free template downloaded from http://www.free-css.com/free-css-templates/page193/bs-education -->
 
-@extends('layouts.app')
+@extends('temp.temp')
 
 @section('content')
 
@@ -23,6 +23,10 @@
                      <li><a href="#course-sec">COURSES</a></li>
                      <li><a href="#contact-sec">CONTACT</a></li>
                 </ul>
+				 <ul class="nav navbar-nav navbar-right">
+				<li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+				</ul>
             </div>
            
         </div>

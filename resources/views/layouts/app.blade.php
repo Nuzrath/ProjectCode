@@ -29,9 +29,10 @@
 
                     <!-- Branding Image -->
 					<!-- this is BICT Logo but does not adjust when i use for mobile ... will check
-					<a class="navbar-brand" href="{{ url('/') }}"><img class="logo-custom" src="/img/bictlogo.jpg" alt="BICT"  /> BICT</a>
+					<a class="navbar-brand" href="{{ url('/') }}">
+					<img class="logo-custom" src="/img/bictlogo.jpg" alt="BICT"  /> BICT</a>
            -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/index') }}">
                       BICT Institute Management Portal
                     </a>
                 </div>
