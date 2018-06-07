@@ -13,7 +13,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img class="logo-custom" src="/img/bictlogo.jpg" alt="BICT"  /> BICT</a>
+                <a class="navbar-brand" href="#">
+				<img class="logo-custom" src="/img/bictlogo.jpg" alt="Logo" style="width:40px;" /> BICT</a>
             </div>
             <div class="navbar-collapse collapse move-me">
                 <ul class="nav navbar-nav navbar-left">
