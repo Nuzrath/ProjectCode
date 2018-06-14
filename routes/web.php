@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes - for demoInstituteMgt
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -22,6 +22,9 @@ Route::get('/index', function(){
 Route::get('/contact', function(){
 	return view('inc.contact');
 });
+
+
+
 
 
 Auth::routes();

@@ -22,11 +22,12 @@
                      <li><a href="#features-sec">FEATURES</a></li>
                     <li><a href="#faculty-sec">FACULTY</a></li>
                      <li><a href="#course-sec">COURSES</a></li>
-                     <li><a href="#contact-sec">CONTACT</a></li>
+                     <li><a href="/contact">CONTACT</a></li>
                 </ul>
 				 <ul class="nav navbar-nav navbar-right">
 				<li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}">Register</a></li>
+				<!-- this is only access by admin to add user (resception)
+                <li><a href="{{ route('register') }}">Register</a></li>-->
 				</ul>
             </div>
            
@@ -319,52 +320,15 @@
                </div>
              </div>
       <!-- COURSES SECTION END-->
-    <div id="contact-sec"   >
-           <div class="overlay">
- <div class="container set-pad">
-      <div class="row text-center">
-                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
-                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line" >CONTACT US  </h1>
-                     <p data-scroll-reveal="enter from the bottom after 0.3s">
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Aenean commodo.
-                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Aenean commodo.
-                         </p>
-                 </div>
-
-             </div>
-             <!--/.HEADER LINE END-->
-           <div class="row set-row-pad"  data-scroll-reveal="enter from the bottom after 0.5s" >
-           
-               
-                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control "  required="required" placeholder="Your Name" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control " required="required"  placeholder="Your Email" />
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" required="required" class="form-control" style="min-height: 150px;" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-info btn-block btn-lg">SUBMIT REQUEST</button>
-                        </div>
-
-                    </form>
-                </div>
+    
 
                    
      
               
               
                 
-               </div>
-                </div>
-          </div> 
-       </div>
+           
+         
      <div class="container">
              <div class="row set-row-pad"  >
     <div class="col-lg-4 col-md-4 col-sm-4   col-lg-offset-1 col-md-offset-1 col-sm-offset-1 " data-scroll-reveal="enter from the bottom after 0.4s">
