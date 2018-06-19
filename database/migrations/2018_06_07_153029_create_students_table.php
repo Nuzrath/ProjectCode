@@ -13,7 +13,7 @@ class CreateStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('student', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('student_id')->unique();
 			$table->string('first_name');
@@ -28,17 +28,19 @@ class CreateStudentsTable extends Migration
 			$table->string('nic_no');
 			$table->string('passport_no');
 			$table->string('gender');
-			$table->string('email_id');->unique()->nullable();
+			$table->string('email_id')->unique()->nullable();
 			$table->date('enroll_date');
 			$table->string('student_img');
 			$table->string('status');
 			
-			$table->integer('course_id');->unsigned();
-			$table->integer('subject_id');->unsigned();
+			$table->integer('course_id')->unsigned();
+			$table->integer('subject_id')->unsigned();
             $table->timestamps();
 			
-			$table->foreign('course_id')->references('id')->on('course_subject');
-			$table->foreign('subject_id')->references('id')->on('course_subject');
+			/*$table->foreign('course_id')->references('id')->on('courses');
+			$table->foreign('subject_id')->references('id')->on('subjects');*/
+			
+			
         });
     }
 
@@ -49,6 +51,6 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student');
+        Schema::dropIfExists('students');
     }
 }

@@ -13,10 +13,8 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('departements', function (Blueprint $table) {
-             
-            $table->increments('id');
-            $table->integer('departement_id')->unique();
+        Schema::create('departments', function (Blueprint $table) {
+            $table->integer('department_id')->unique();
             $table->string('department_name');
             $table->timestamps();
        
@@ -30,8 +28,6 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('departements', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('departments');
     }
 }

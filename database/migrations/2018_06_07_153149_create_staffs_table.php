@@ -16,7 +16,7 @@ class CreateStaffsTable extends Migration
         Schema::create('staffs', function (Blueprint $table) {
             $table->increments('id');
 			
-			$table->integer('staff_id');->unique();
+			$table->integer('staff_id')->unique();
 			$table->string('first_name');
 			$table->string('last_name');
 			$table->string('address');
@@ -26,17 +26,17 @@ class CreateStaffsTable extends Migration
 			$table->string('nic_no');
 			$table->string('passport_no');
 			$table->string('gender');
-			$table->string('email_id');->unique();
+			$table->string('email_id')->unique();
 			$table->string('qualification');
-			$table->date('date_of_appointment');
+			$table->date('date_of_appointed');
 			$table->string('certificates_img');
 			$table->string('status');
 			$table->string('staff_pic');
 			
-			$table->integer('department_id');->unsigned();
+			$table->integer('department_id')->unsigned();
             $table->timestamps();
 			
-			$table->foreign('department_id')->references('id')->on('departments');
+		/*$table->foreign('department_id')->references('id')->on('departments');*/
         });
     }
 

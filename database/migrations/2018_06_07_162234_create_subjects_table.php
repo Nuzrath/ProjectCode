@@ -13,10 +13,13 @@ class CreateSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::table('subjects', function (Blueprint $table) {
-$table->increments('id');
+        Schema::create('subjects', function (Blueprint $table) {
+			$table->increments('id');
             $table->integer('subject_id')->unique();
             $table->string('subject_name');
+			$table->integer('course_id')->unsigned();
+			
+			/*$table->foreign('course_id')->references('id')->on('courses');	*/		
             $table->timestamps();
         });
     }
@@ -28,8 +31,6 @@ $table->increments('id');
      */
     public function down()
     {
-        Schema::table('subjects', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('subjects');
     }
 }
