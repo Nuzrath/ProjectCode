@@ -17,7 +17,7 @@
 					<img class="logo-custom" src="/img/bictlogo.jpg" alt="BICT"  /> BICT</a>
            -->
                     <a class="navbar-brand" href="{{ url('/index') }}">
-                      BICT Institute Management Portal
+                      BICT Management Portal
                     </a>
                 </div>
 

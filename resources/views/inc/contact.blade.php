@@ -98,8 +98,24 @@
                                 @endif
                             </div>
                         </div>
-<h5> Note : Please fill this form for any kind of queries. we will contact you soon.</h5>
+						
+						<div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+
+                                
+                            </div>
+                        </div>
+					</form>
+<h4> Note : </h4><p> Please fill this form for any kind of queries. we will contact you soon.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
 @endsection
 
 

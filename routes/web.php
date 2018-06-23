@@ -19,18 +19,12 @@ Route::get('/index', function(){
 	return view('index');
 });
 
-Route::get('/contact', function(){
-	return view('inc.contact');
-});
-
-
-
-
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/contact','ContactController@contact');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/addcontact','ContactController@addcontact');
+ 
