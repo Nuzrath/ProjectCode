@@ -11,6 +11,23 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
+						<!-- User type for bict portal -->
+						
+						<div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">User type </label>
+
+                            <div class="col-md-6">
+                                <input id="type" type="type" class="form-control" name="type" value="{{ old('type') }}">
+
+                                @if ($errors->has('type'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+						<!-- end bict user type -->
+						
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

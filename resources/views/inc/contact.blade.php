@@ -7,6 +7,24 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+		
+		<!-- ====== Validation server side ===== 
+this will display on on contact.php page if successfull			-->
+			@if(count($errors)>0)
+				@foreach($errors->all() as $error)
+			<div class="alert alert-danger"> {{ $error }} </div>
+				@endforeach			
+			@endif
+			
+				<!-- this response is comes from ContactController -->
+		@if(session('response'))
+			<div class="alert alert-success">{{ session('response') }}</div>
+		
+		@endif
+			
+			<!-- validation end -->
+		
+		
             <div class="panel panel-default">
 			
 			 <div class="panel-heading">Contact us</div>
@@ -83,11 +101,11 @@
                             </div>
                         </div>
 						
-						<div class="form-group{{ $errors->has('comments') ? ' has-error' : '' }}">
-                            <label for="comments" class="col-md-4 control-label">Comments/ Requests</label>
+						<div class="form-group{{ $errors->has('comment') ? ' has-error' : '' }}">
+                            <label for="comment" class="col-md-4 control-label">Comment/ Request</label>
 
                             <div class="col-md-6">
-                                <textarea id="comment" type="textarea" class="form-control" name="comments" value="{{ old('comments') }}" >
+                                <textarea id="comment" type="textarea" class="form-control" name="comment" value="{{ old('comment') }}" >
 								
 							</textarea>
 
@@ -116,7 +134,7 @@
 	</div>
 </div>
 
-@endsection
+/*---@endsection*/
 
 
    
