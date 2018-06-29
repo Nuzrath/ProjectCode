@@ -19,6 +19,9 @@ Route::get('/index', function(){
 	return view('index');
 });
 
+/*Route::get('/studentform',function(){
+	return view('reg.student');
+});*/
 
 Auth::routes();
 
@@ -27,4 +30,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/contact','ContactController@contact');
 
 Route::post('/addcontact','ContactController@addcontact');
+
+Route::get('/studentform', 'StudentController@studentform');
  
