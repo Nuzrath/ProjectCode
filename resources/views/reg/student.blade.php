@@ -49,12 +49,12 @@
 							<label for="address" class="col-md-4 control-label">Address</label>
 							
 							<div class="col-md-6">
-							<input id="address" type="textbox" class="form-control" name="address" placeholder="eg: 26, 1st lane" required>
+							<input id="address" type="textbox" class="form-control" name="address" placeholder="eg: 26, 1st lane" >
 							</div>
 						
 						</div>
 						
-<!-- home address street					
+<!-- home address street-->					
                         <div class="form-group">
 							<label for="street" class="col-md-4 control-label">Street</label>
 							
@@ -64,7 +64,7 @@
 						</div>
 
 
-<!-- home address city-				
+<!-- home address city-->			
                         <div class="form-group">
 							<label for="city" class="col-md-4 control-label">City</label>
 							
@@ -74,7 +74,7 @@
 						</div>
 
 
-<!-- home address Country--					
+<!-- home address Country-->				
                         <div class="form-group">
 							<label for="country" class="col-md-4 control-label">Country</label>
 							
@@ -84,7 +84,7 @@
 						</div>
 
 						
-<!-- Date of Birth it should be drop down at this movement just type as input--					
+<!-- Date of Birth it should be drop down at this movement just type as input-->					
                         <div class="form-group">
 							<label for="dob" class="col-md-4 control-label">Date of Birth</label>
 							
@@ -93,9 +93,9 @@
 							</div>
 						</div>
 						
-<!-- should be display show age near by this --
+<!-- should be display show age near by this -->
 
-<!-- contact no1 --
+<!-- contact no1 -->
                         <div class="form-group{{ $errors->has('contact_no1') ? ' has-error' : '' }}">
                             <label for="contact_no1" class="col-md-4 control-label">Mobile No:</label>
 
@@ -111,7 +111,7 @@
                         </div>
 
 						
-<!-- contact no2 --
+<!-- contact no2 -->
                         <div class="form-group{{ $errors->has('contact_no2') ? ' has-error' : '' }}">
                             <label for="contact_no2" class="col-md-4 control-label">Home No:</label>
 
@@ -127,7 +127,7 @@
                         </div>
 
 						
-<!-- NIC No--         <div class="form-group">
+<!-- NIC No-->         <div class="form-group">
 							<label for="nic" class="col-md-4 control-label">National ID No:</label>
 							
 							<div class="col-md-6">
@@ -136,7 +136,7 @@
 						</div>
 
 						
-<!-- Passport No--					
+<!-- Passport No-->					
                         <div class="form-group">
 							<label for="passport_no" class="col-md-4 control-label">Passport No:</label>
 							
@@ -146,7 +146,7 @@
 						</div>
 
 					
-<!-- gender	--			
+<!-- gender	-->			
 				<div class="form-group">
 					<label for="passport_no" class="col-md-4 control-label">Gender </label>
 						<div class="form-check">
@@ -169,7 +169,7 @@
 				
 				
 						
-<!-- emial address --						
+<!-- emial address -->						
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -185,7 +185,7 @@
                         </div>
 
 				
-<!-- enrollment Date should be detact from create by --
+<!-- enrollment Date should be detact from create by -->
 						
 <!-- status --						
                         <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
