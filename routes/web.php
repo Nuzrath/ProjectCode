@@ -28,8 +28,20 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contact','ContactController@contact');
+/* link on contact url */
 
 Route::post('/addcontact','ContactController@addcontact');
+/* when click button On CONTACT it will send information to db using model */
 
 Route::get('/studentform', 'StudentController@studentform');
- 
+/* link on student url */
+
+Route::get('/staffform', 'StaffController@staffform');
+/* link on staff url */
+
+Route::post('/addstudent', 'StudentController@addstudent');
+/* when click button On STUDENT it will send information to db using model */
+
+Route::post('/addstaff', 'StaffController@addstaff');
+/* when click button on STAFF it will send information to db using model */ 
+

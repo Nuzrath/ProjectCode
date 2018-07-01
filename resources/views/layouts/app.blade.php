@@ -37,6 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/studentform') }}">Student Application</a></li>
+						<li><a href="{{ url('/staffform') }}">Staff Application</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
