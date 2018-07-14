@@ -22,7 +22,7 @@ class CreateStudentsTable extends Migration
 			$table->string('street');
 			$table->string('city');
 			$table->string('country');
-			$table->date('date_of_birth');
+			$table->date('date_of_birth')->nullable();
 			$table->integer('contact_no1');
 			$table->string('contact_no2');
 			$table->string('nic_no');

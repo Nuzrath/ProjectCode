@@ -65,11 +65,12 @@ class StudentController extends Controller
 		$student->passport_no = $request->input('passport_no');
 		$student->gender = $request->input('gender');
 		$student->email_id = $request->input('email_id');
-	
-		/*$student->save();*/
-		return $student;
-		/*
-		return redirect('/contact')->with('response','contact added sucessfully');*/
-	
+		$student->course_id = $request->input('course_id');
+		$student->subject_id = $request->input('subject_id');
+		
+		$student->save();
+	/*
+		return redirect('/studentform')->with('response','Student added sucessfully');*/
+
 	}
 }

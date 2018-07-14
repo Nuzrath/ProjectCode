@@ -4,6 +4,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+		<!-- ==== error checking ==
+		this will display if successfully saved on db -->
+		@if(count($errors)>0)
+			@foreach($errors->all() as $error)
+		<div class="alert alert-danger">{{ $error }} </div>
+			@endforeach
+		@endif
+		
+		@if(session('response'))
+			<div class="alert alert-success">{{ session('response') }}</div>
+		@endif
+	
+
+		
+		
             <div class="panel panel-default">
                 <div class="panel-heading">Student Register</div>
 
@@ -89,7 +104,7 @@
 							<label for="dob" class="col-md-4 control-label">Date of Birth</label>
 							
 							<div class="col-md-6">
-							<input id="date_of_birth" type="textbox" class="form-control" name="date_of_birth" placeholder="DD - MM - YYYY" required>
+							<input id="date_of_birth" type="textbox" class="form-control" name="date_of_birth" placeholder="DD - MM - YYYY" required >
 							</div>
 						</div>
 						
@@ -203,9 +218,23 @@
                         </div>
 				
 						
-					
+<!-- course_id id No-->					
+                        <div class="form-group">
+							<label for="course_id" class="col-md-4 control-label">Course ID:</label>
+							
+							<div class="col-md-6">
+							<input id="course_id" type="textbox" class="form-control" name="course_id" placeholder="dip111">
+							</div>
+						</div>					
 					 
-
+<!-- subject_id id No-->					
+                        <div class="form-group">
+							<label for="subject_id" class="col-md-4 control-label">Subject ID:</label>
+							
+							<div class="col-md-6">
+							<input id="subject_id" type="textbox" class="form-control" name="subject_id" placeholder="IT001">
+							</div>
+						</div>	
 						
 						
 						
