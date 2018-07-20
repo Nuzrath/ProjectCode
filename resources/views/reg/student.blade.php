@@ -59,20 +59,20 @@
 						
 <!-- home address #-->						
                        <div class="form-group">
-							<label for="address" class="col-md-4 control-label">Address</label>
+							<label for="add1" class="col-md-4 control-label">Address</label>
 							
 							<div class="col-md-6">
-							<input id="address" type="textbox" class="form-control" name="address" placeholder="eg: 26, 1st lane" >
+							<input id="add1" type="textbox" class="form-control" name="add1" placeholder="eg: 26, 1st lane" >
 							</div>
 						
 						</div>
 						
 <!-- home address street-->					
                         <div class="form-group">
-							<label for="street" class="col-md-4 control-label">Street</label>
+							<label for="add2" class="col-md-4 control-label">Street</label>
 							
 							<div class="col-md-6">
-							<input id="street" type="textbox" class="form-control" name="street" placeholder="eg.1st chapel lane">
+							<input id="add2" type="textbox" class="form-control" name="add2" placeholder="eg.1st chapel lane">
 							</div>
 						</div>
 

@@ -12,6 +12,13 @@ class StudentController extends Controller
 		// test 1 => return 'student form'; //Success
 		
 		return view('reg.student');
+		
+	}
+	
+	public function stdLogin(){
+		
+		return view('reg.stud_log');
+		
 	}
 	
 	public function addstudent(Request $request){
@@ -73,4 +80,7 @@ class StudentController extends Controller
 		return redirect('/studentform')->with('response','Student added sucessfully');*/
 
 	}
+	
+	
+	
 }

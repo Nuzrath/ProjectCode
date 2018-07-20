@@ -16,4 +16,9 @@ class StaffController extends Controller
 	public function addstaff(Request $request){
 		return 'add staff';		
 	}
+	
+	public function staffLogin(){
+		
+		return view('reg.staff_log');
+	}
 }

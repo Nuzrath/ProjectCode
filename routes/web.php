@@ -33,15 +33,35 @@ Route::get('/contact','ContactController@contact');
 Route::post('/addcontact','ContactController@addcontact');
 /* when click button On CONTACT it will send information to db using model */
 
+
+/* 
+*
+|--------------------------------------------------------------------------
+| STUDENT SECTION 
+|--------------------------------------------------------------------------
+|*/
+
+
 Route::get('/studentform', 'StudentController@studentform');
 /* link on student url */
-
-Route::get('/staffform', 'StaffController@staffform');
-/* link on staff url */
 
 Route::post('/addstudent', 'StudentController@addstudent');
 /* when click button On STUDENT it will send information to db using model */
 
+Route::get('/stdLogin','StudentController@stdLogin');
+
+/* 
+*
+|--------------------------------------------------------------------------
+| STAFF SECTION 
+|--------------------------------------------------------------------------
+|*/
+
+Route::get('/staffform', 'StaffController@staffform');
+/* link on staff url */
+
 Route::post('/addstaff', 'StaffController@addstaff');
 /* when click button on STAFF it will send information to db using model */ 
+
+Route::get('/staffLogin','staffController@staffLogin');
 
