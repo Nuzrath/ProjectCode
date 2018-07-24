@@ -59,22 +59,22 @@
 						
 <!-- home address #-->						
                        <div class="form-group">
-							<label for="add1" class="col-md-4 control-label">Address</label>
+							<label for="add_no" class="col-md-4 control-label">Address</label>
 							
 							<div class="col-md-6">
-							<input id="add1" type="textbox" class="form-control" name="add1" placeholder="eg: 26, 1st lane" >
+							<input id="add_no" type="textbox" class="form-control" name="add_no" placeholder="eg: 26, 1st lane" >
 							</div>
 						
 						</div>
 						
-<!-- home address street-->					
+<!-- home address street				
                         <div class="form-group">
 							<label for="add2" class="col-md-4 control-label">Street</label>
 							
 							<div class="col-md-6">
 							<input id="add2" type="textbox" class="form-control" name="add2" placeholder="eg.1st chapel lane">
 							</div>
-						</div>
+						</div>-->	
 
 
 <!-- home address city-->			
@@ -99,10 +99,10 @@
 						
 <!-- Date of Birth it should be drop down at this movement just type as input-->					
                         <div class="form-group">
-							<label for="dob" class="col-md-4 control-label">Date of Birth</label>
+							<label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
 							
 							<div class="col-md-6">
-							<input id="date_of_birth" type="textbox" class="form-control" name="date_of_birth" placeholder="DD - MM - YYYY" required >
+							<input id="date_of_birth" type="textbox" class="form-control" name="date_of_birth" placeholder="DD - MM - YYYY" >
 							</div>
 						</div>
 						

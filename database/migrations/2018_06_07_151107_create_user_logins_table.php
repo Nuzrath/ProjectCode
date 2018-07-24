@@ -14,7 +14,7 @@ class CreateUserLoginsTable extends Migration
     public function up()
     {
         Schema::create('user_logins', function (Blueprint $table) {
-            $table->increments('id');
+        
 			$table->integer('user_id');
 			$table->time('login_time');
 			$table->ipAddress('ip_address');

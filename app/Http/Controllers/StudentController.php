@@ -40,8 +40,7 @@ class StudentController extends Controller
 		$this->validate($request,[
 		'fname'=>'required',
 		'lname'=>'required',
-		'address'=>'required',
-		'street'=>'required',
+		'address'=>'nullable',
 		'city'=>'required',
 		'country'=>'nullable',
 		'date_of_birth'=>'nullable',
@@ -61,8 +60,7 @@ class StudentController extends Controller
 		$student=new Student;
 		$student->first_name = $request->input('fname');
 		$student->last_name = $request->input('lname');
-		$student->add_no = $request->input('address');
-		$student->street = $request->input('street');
+		$student->add_no = $request->input('add_no');
 		$student->city = $request->input('city');
 		$student->country = $request->input('country');
 		$student->date_of_birth = $request->input('date_of_birth');
