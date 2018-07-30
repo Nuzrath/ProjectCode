@@ -4,6 +4,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+		
+		<!-- ==== error checking ==
+		server side validation if error occurs-->
+		@if(count($errors)>0)
+			@foreach($errors->all as $error)
+		<div class="alert alert-danger">{{ $error }}</div>
+			@endforeach
+		@endif
+	<!---
+	===if successfully added to db ====
+	this is will pop up msg from StaffControll@addstaff method 
+	return redirect('/staffform')->with('response','Staff added sucessfully');
+	
+	-->
+		@if(session('response'))
+			<div class="alert alert-success"> {{ session('response') }}</div>
+		
+		@endif
+		
             <div class="panel panel-default">
                 <div class="panel-heading">Staff Register</div>
 
@@ -17,8 +36,8 @@
                             <label for="fname" class="col-md-4 control-label">First Name</label>
 
                             <div class="col-md-6">
-                                <input id="fname" type="text" class="form-control" name="fname" value="{{ old('fname') }}" required autofocus>
-
+                                <input id="fname" type="text" class="form-control" name="fname" value="John"required autofocus >
+<!--value="{{ old('fname') }}"--->
                                 @if ($errors->has('fname'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('fname') }}</strong>
@@ -49,37 +68,18 @@
 							<label for="address" class="col-md-4 control-label">Address</label>
 							
 							<div class="col-md-6">
-							<input id="address" type="textbox" class="form-control" name="address" placeholder="eg: 26, 1st lane" required>
+							<input id="address" type="textbox" class="form-control" name="address" placeholder="eg: 26, 1st lane wellawatta" required>
 							</div>
 						
 						</div>
 						
-<!-- home address street-->						
-                        <div class="form-group">
-							<label for="street" class="col-md-4 control-label">Street</label>
-							
-							<div class="col-md-6">
-							<input id="street" type="textbox" class="form-control" name="street" placeholder="eg.1st chapel lane">
-							</div>
-						</div>
-
-
-<!-- home address city-->						
-                        <div class="form-group">
-							<label for="city" class="col-md-4 control-label">City</label>
-							
-							<div class="col-md-6">
-							<input id="city" type="textbox" class="form-control" name="city" placeholder="eg.colombo 06" required>
-							</div>
-						</div>
-
 
 <!-- home address Country-->						
                         <div class="form-group">
 							<label for="country" class="col-md-4 control-label">Country</label>
 							
 							<div class="col-md-6">
-							<input id="country" type="textbox" class="form-control" name="country" placeholder="eg.sri lanka" required>
+							<input id="country" type="textbox" class="form-control" name="country" placeholder="eg.sri lanka">
 							</div>
 						</div>
 
@@ -89,22 +89,22 @@
 							<label for="dob" class="col-md-4 control-label">Date of Birth</label>
 							
 							<div class="col-md-6">
-							<input id="date_of_birth" type="textbox" class="form-control" name="date_of_birth" placeholder="DD - MM - YYYY" required>
+							<input id="dob" type="date" class="form-control" name="dob" placeholder="YYYY-MM-DD" required>
 							</div>
 						</div>
 						
 <!-- should be display show age near by this -->
 
 <!-- contact no1 -->
-                        <div class="form-group{{ $errors->has('contact_no1') ? ' has-error' : '' }}">
-                            <label for="contact_no1" class="col-md-4 control-label">Mobile No:</label>
+                        <div class="form-group{{ $errors->has('contact1') ? ' has-error' : '' }}">
+                            <label for="contact1" class="col-md-4 control-label">Mobile No:</label>
 
                             <div class="col-md-6">
-                                <input id="contact_no1" type="text" class="form-control" name="contact_no1" value="{{ old('contact_no1') }}" required autofocus>
+                                <input id="contact1" type="text" class="form-control" name="contact1" value="{{ old('contact1') }}" required autofocus>
 
-                                @if ($errors->has('contact_no1'))
+                                @if ($errors->has('contact1'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('contact_no1') }}</strong>
+                                        <strong>{{ $errors->first('contact1') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -112,15 +112,15 @@
 
 						
 <!-- contact no2 -->
-                        <div class="form-group{{ $errors->has('contact_no2') ? ' has-error' : '' }}">
-                            <label for="contact_no2" class="col-md-4 control-label">Home No:</label>
+                        <div class="form-group{{ $errors->has('contact2') ? ' has-error' : '' }}">
+                            <label for="contact2" class="col-md-4 control-label">Home No:</label>
 
                             <div class="col-md-6">
-                                <input id="contact_no2" type="text" class="form-control" name="contact_no2" value="{{ old('contact_no2') }}">
+                                <input id="contact2" type="text" class="form-control" name="contact2" value="{{ old('contact2') }}">
 
-                                @if ($errors->has('contact_no1'))
+                                @if ($errors->has('contact2'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('contact_no2') }}</strong>
+                                        <strong>{{ $errors->first('contact2') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -149,20 +149,20 @@
 					
 <!-- gender	-->				
 				<div class="form-group">
-					<label for="passport_no" class="col-md-4 control-label">Gender </label>
+					<label for="gender" class="col-md-4 control-label">Gender </label>
 						<div class="form-check">
 						  <label class="form-check-label">
 							<input type="radio" class="form-check-input" name="gender" id="gender" value="male" checked>
 							Male
-						  </label>
+						  </label> <br>
 							<label class="form-check-label">
 								<input type="radio" class="form-check-input" name="gender" id="gender" value="female">
 								Female
 							</label>
-							<label class="form-check-label">
+						<!-- <label class="form-check-label">
 								<input type="radio" class="form-check-input" name="gender" id="gender" value="non_binary">
 								Non-binary
-							</label>
+							</label>-->
 						</div>
 						
 				</div>
@@ -170,7 +170,7 @@
 				
 				
 						
-<!-- emial address -->						
+<!-- email address -->						
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
@@ -185,10 +185,11 @@
                             </div>
                         </div>
 
+
 				
 <!-- enrollment Date should be detact from create by -->
 						
-<!-- status -->						
+<!-- status 					
                         <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                             <label for="status" class="col-md-4 control-label">status</label>
 
@@ -202,7 +203,7 @@
                                 @endif
                             </div>
                         </div>
-				
+				-->	
 						
 					
 					 

@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateStudentsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('students', function (Blueprint $table) {
+            $table->increments('std_id')->unique()->autoincrements();
+			$table->string('fname')->default('M');
+			$table->string('lname')->default('siva');
+			$table->text('address')->nullable();
+			$table->string('city')->default('Colombo 06');
+			$table->string('country')->default('Sri Lanka');
+			$table->date('dob')->default('1992.05.03');
+			$table->integer('contact1')->default('0713123456');
+			$table->integer('contact2')->nullable();
+			$table->string('nic')->nullable()->default('555555555V');
+			$table->string('passport_no')->nullable();
+			$table->string('gender');
+			$table->string('email')->nullable()->default('nulu@gmail.com');
+			$table->string('status')->nullable()->default('test status');
+			$table->integer('course_id')->default('101');
+			$table->integer('subject_id')->default('102');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('students');
+    }
+}

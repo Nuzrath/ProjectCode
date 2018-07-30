@@ -11,11 +11,13 @@
 		<div class="alert alert-danger">{{ $error }} </div>
 			@endforeach
 		@endif
+			
+				<!-- this response is comes from ContactController -->
+		@if(session('response'))
+			<div class="alert alert-success">{{ session('response') }}</div>
 		
-  
-	
-
-		
+		@endif
+			
 		
             <div class="panel panel-default">
                 <div class="panel-heading">Student Register</div>
@@ -59,10 +61,10 @@
 						
 <!-- home address #-->						
                        <div class="form-group">
-							<label for="add_no" class="col-md-4 control-label">Address</label>
+							<label for="address" class="col-md-4 control-label">Address</label>
 							
 							<div class="col-md-6">
-							<input id="add_no" type="textbox" class="form-control" name="add_no" placeholder="eg: 26, 1st lane" >
+							<input id="address" type="textbox" class="form-control" name="address" placeholder="eg: 26, 1st lane" >
 							</div>
 						
 						</div>
@@ -99,25 +101,25 @@
 						
 <!-- Date of Birth it should be drop down at this movement just type as input-->					
                         <div class="form-group">
-							<label for="date_of_birth" class="col-md-4 control-label">Date of Birth</label>
+							<label for="dob" class="col-md-4 control-label">Date of Birth</label>
 							
 							<div class="col-md-6">
-							<input id="date_of_birth" type="textbox" class="form-control" name="date_of_birth" placeholder="DD - MM - YYYY" >
+							<input id="dob" type="date" class="form-control" name="dob" placeholder="YYYY.MM.DD" >
 							</div>
 						</div>
 						
 <!-- should be display show age near by this -->
 
 <!-- contact no1 -->
-                        <div class="form-group{{ $errors->has('contact_no1') ? ' has-error' : '' }}">
-                            <label for="contact_no1" class="col-md-4 control-label">Mobile No:</label>
+                        <div class="form-group{{ $errors->has('contact1') ? ' has-error' : '' }}">
+                            <label for="contact1" class="col-md-4 control-label">Mobile No:</label>
 
                             <div class="col-md-6">
-                                <input id="contact_no1" type="text" class="form-control" name="contact_no1" value="{{ old('contact_no1') }}" required autofocus>
+                                <input id="contact1" type="text" class="form-control" name="contact1" value="{{ old('contact1') }}" required autofocus>
 
-                                @if ($errors->has('contact_no1'))
+                                @if ($errors->has('contact1'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('contact_no1') }}</strong>
+                                        <strong>{{ $errors->first('contact1') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -125,15 +127,15 @@
 
 						
 <!-- contact no2 -->
-                        <div class="form-group{{ $errors->has('contact_no2') ? ' has-error' : '' }}">
-                            <label for="contact_no2" class="col-md-4 control-label">Home No:</label>
+                        <div class="form-group{{ $errors->has('contact2') ? ' has-error' : '' }}">
+                            <label for="contact2" class="col-md-4 control-label">Home No:</label>
 
                             <div class="col-md-6">
-                                <input id="contact_no2" type="text" class="form-control" name="contact_no2" value="{{ old('contact_no2') }}">
+                                <input id="contact2" type="text" class="form-control" name="contact2" value="{{ old('contact2') }}">
 
-                                @if ($errors->has('contact_no1'))
+                                @if ($errors->has('contact2'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('contact_no2') }}</strong>
+                                        <strong>{{ $errors->first('contact2') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -161,7 +163,7 @@
 					
 <!-- gender	-->			
 				<div class="form-group">
-					<label for="passport_no" class="col-md-4 control-label">Gender </label>
+					<label for="gender" class="col-md-4 control-label">Gender </label>
 						<div class="form-check">
 						  <label class="form-check-label">
 							<input type="radio" class="form-check-input" name="gender" id="gender" value="male" checked>
