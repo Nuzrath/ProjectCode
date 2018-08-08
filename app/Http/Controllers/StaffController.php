@@ -8,16 +8,13 @@ use App\Staff;
 class StaffController extends Controller
 {
     //
-	public function staffform(){
+	public function create(){
 		/* ---- test 1=>  return 'staff form'; **/
 		
-		return view('reg.staff');
+		return view('staff.form');
 	}
 	
-	public function staffLogin(){
-		
-		return view('reg.staff_log');
-	}
+	
 
 	
 	public function addstaff(Request $request){
@@ -66,6 +63,8 @@ class StaffController extends Controller
 	
 	
 	}
+	
+	
 	
 	
 }

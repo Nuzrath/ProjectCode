@@ -11,13 +11,15 @@ class CreateContactsTable extends Migration
      *
      * @return void
      */
+	 
+	 /*contact details for visitors and request by the user*/
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
 			$table->string('name')->default('mohan');
 			$table->string('email')->nullable()->default('niluk@gmail.com');
-			$table->integer('phone');
+			$table->integer('phone')->index();
 			$table->string('course')->default('dip in computer');
 			$table->text('comment')->nullable();
             $table->timestamps();

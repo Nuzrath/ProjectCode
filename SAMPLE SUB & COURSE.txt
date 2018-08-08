@@ -1,0 +1,17 @@
+100, Ms word 
+101, Ms excel
+102, Ms ppt
+103, Ms access
+104, coreldraw
+105, photoshop
+106, illustrator
+107, pagemaker
+108, autocad
+109, Java
+110, Hardware
+
+
+Dip in computer
+Dip in Graphic designing
+Dip in Autocad
+Dip in hardware

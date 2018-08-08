@@ -1,0 +1,181 @@
+[33mcommit 7178569ac9b0a58cbec904a939525dc27fedb632[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Mon Jul 30 23:52:38 2018 +0530
+
+    this is succuessfully staff and student forms push to database and removed other migrations and default value set to mysql
+
+[33mcommit dce2bd3753d89245866033caba679552e7ac3182[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Wed Jul 25 03:50:34 2018 +0530
+
+    student form is working but address is not detecting to db
+    and dob issue
+
+[33mcommit dc43b0f0b82e9707c484e9a470ab66df1c389c28[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Fri Jul 20 16:45:47 2018 +0530
+
+    student and staff login created
+
+[33mcommit 1bc9d40d3723c9ea4223bd48a01372cd0a11a0c9[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Mon Jul 16 19:00:39 2018 +0530
+
+    request soled
+
+[33mcommit 0a8a6078f3c0afef6cac9eec8d62bcce23e6abc1[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Sat Jul 14 11:41:51 2018 +0530
+
+    with error i attached error in
+    
+    "SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect integer value: 'test1..' for column 'add_no' at row 1 (SQL: insert into `students` (`first_name`, `last_name`, `add_no`, `street`, `city`, `country`, `date_of_birth`, `contact_no1`, `contact_no2`, `nic_no`, `passport_no`, `gender`, `email_id`, `course_id`, `subject_id`, `updated_at`, `created_at`) values (T, Test1, test1.., test1, test1, test1, 16.05.2001, 0713545467, , 5555555555v, , male, , , , 2018-07-14 06:11:16, 2018-07-14 06:11:16))"
+
+[33mcommit fb7b6fd0267a8ce82f2ed2c5e1e275db55512cf6[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Mon Jul 2 01:32:02 2018 +0530
+
+    2nd july 2018 commit
+    
+    - Student Controller create with
+    validation unit test success.
+    - create model
+    - create object student=new Student
+    - successfully object array is returning
+
+[33mcommit 532248b829454742981a65139e73873e0af72308[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Sun Jul 1 22:58:26 2018 +0530
+
+    1st July 2018
+    
+    - Create StaffController & StudentController
+    
+    - Staff & Student model created
+    
+    - Student & staff registration form created
+    
+    - and for db checking
+
+[33mcommit 637fddceba031d616dc1674c473dc03b266dd580[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Fri Jun 29 10:44:45 2018 +0530
+
+    29th June 2018 Commit
+    
+    1. Student Registration change as Reg
+    2. Student reg/student.blade.php alternate new application form
+    3. route create to /student and link added to login
+    ..etc
+
+[33mcommit d9f160caaf54ed3d0f1358e8b1e5bf49fbeb3543[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Sun Jun 24 19:01:00 2018 +0530
+
+    24th June 2018
+    
+    - Create Model for Contact
+    - ContactController verification success
+    - ContactController Object create
+    
+    $contact => new Contact
+    ..
+    - Now this save into db
+
+[33mcommit 92fbe715c5f0467a4f2d1dcad4da2e8246087c8a[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Sat Jun 23 08:42:55 2018 +0530
+
+    This removed vendor from igignore
+    and  Contact page succefully design using controller and with testing mode
+    
+    Testing 1 phase
+    on ContactController
+    public function contact() & addcontact()
+    
+    add contact test1 one is working now.
+
+[33mcommit f04cdd8d66d972ffecf34045603321ac063a432e[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Tue Jun 19 20:21:11 2018 +0530
+
+    19th June 2018 today works
+    
+    
+    1.  DEBUG Enable on config\app.php
+                    &&&     -    'debug' => env('APP_DEBUG', false), changed as
+                            +    'debug' => true,
+    
+    
+    
+    
+    2. schema designed
+            *except salaries the
+            agian i make:auth
+    
+    3. when i migrate
+            * i got lot of issues therefore i removed forign() (relationship),then
+            * i got 9 tables but issues is
+    
+            C:\xampp\htdocs\finalProject\demoInstituteMgt>php artisan migrate
+            Migration table created successfully.
+    
+            In Macroable.php line 96:
+    
+            Method status does not exist.
+    
+    
+    4. * then i delete schema course_subject NOW OK i got 11 table.
+            *others are made db but when comes to booking it gives an error message
+    
+    In Macroable.php line 96:
+    
+      Method increment does not exist.
+    
+    5. * then i deleted -> booking table
+            *** NOW I HAVE 16 table *** fine
+    then commit to github
+
+[33mcommit 7365de67b98c2bbb2ffc01a53ba62bd79c08a271[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Thu Jun 14 17:53:53 2018 +0530
+
+    added contact form for the visitor purpose. bust still not create schema
+
+[33mcommit 964a63160b9d765057d50146fd1d6a0d9852a2b7[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Thu Jun 7 22:19:05 2018 +0530
+
+    changes made in this commit:
+    1. created a folder registration > student & staff page created (as blank)
+    2. created migration for staffs, departments, students, subjects, courses and course_subject schemas..
+    
+    please check this
+
+[33mcommit 627a308ab13c0bc766a766b5235a7c8b15507ec7[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Fri Jun 1 17:45:33 2018 +0530
+
+    update :
+    -index is working with all images,
+    - login register link attached with index
+    -
+
+[33mcommit bc286fc31c185e43a6da4246d218690580359f9b[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Wed May 30 23:25:47 2018 +0530
+
+    on This commit, i have made make:auth but my previous layouts.app.blade prevous
+    therefore it hasbeen changed, anyhow should i change my index.blade.php
+
+[33mcommit 66c620e9f65275454caf913f35381feb4125455a[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Wed May 30 01:20:00 2018 +0530
+
+    added index page for project from free template
+
+[33mcommit a0d7b0cdefb9163a4debf4d4a7a584df5fb52c3a[m
+Author: Nuzrath <nujitech@gmail.com>
+Date:   Tue May 29 01:07:25 2018 +0530
+
+    this is basic laravel file

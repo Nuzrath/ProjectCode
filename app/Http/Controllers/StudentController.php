@@ -4,23 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Course;
 
 class StudentController extends Controller
 {
     //
+		
+	
+	
 	public function studentform(){
 		// test 1 => return 'student form'; //Success
 		
-		return view('reg.student');
+		//pullout details to form from dba_close
+		$courses =Course::lists('name','id')->all();
+		
+		return view('students.student',compact('courses'));
 		
 	}
 	
 	public function stdLogin(){
 		
-		return view('reg.stud_log');
+		return view('students.stud_log');
 		
 	}
-	
+		public function course(){
+				return $this->belongsToMany('App\Course');
+			}
 	public function addstudent(Request $request){
 		/*test 1 == success 
 		return 'add form reg';*/

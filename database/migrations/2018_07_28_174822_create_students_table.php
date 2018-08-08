@@ -27,9 +27,11 @@ class CreateStudentsTable extends Migration
 			$table->string('passport_no')->nullable();
 			$table->string('gender');
 			$table->string('email')->nullable()->default('nulu@gmail.com');
-			$table->string('status')->nullable()->default('test status');
+			$table->string('is_active')->default('1');//1= active, 0 = not active
 			$table->integer('course_id')->default('101');
 			$table->integer('subject_id')->default('102');
+			
+			$table->integer('role_id')->index()->nullable()->unsigned()->default('2');
             $table->timestamps();
         });
     }

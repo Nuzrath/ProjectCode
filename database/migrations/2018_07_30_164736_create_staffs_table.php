@@ -27,12 +27,13 @@ class CreateStaffsTable extends Migration
 			$table->string('gender');
 			$table->string('email_id')->unique()->default('123@gmail.com');
 			$table->string('qualification')->default('dip in english');
-			$table->date('date_of_appointed');
+			$table->date('date_of_appointed')->nullable();
 			$table->string('certificates_img')->nullable();
-			$table->string('status')->nullable();
+			$table->string('status')->nullable()->default('1');//1 is active 0 is not active
 			$table->string('staff_pic')->nullable();
+			$table->integer('role_id')->unsigned()->default('1');
 			
-			$table->integer('department_id')->unsigned();
+			/*$table->integer('department_id')->unsigned();*/
             $table->timestamps();
         });
     }
