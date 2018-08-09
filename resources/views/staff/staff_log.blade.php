@@ -8,7 +8,7 @@
                 <div class="panel-heading">Staff Login</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url("/login") }}">
+                    <form class="form-horizontal" method="POST" action="{{ url("staff") }}">
                         {{ csrf_field() }}
 
 						<!-- User type for bict portal -->

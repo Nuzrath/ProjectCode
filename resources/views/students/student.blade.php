@@ -218,43 +218,33 @@
                         </div>
 				
 						
-<!-- course_id id No-->					
+<!-- course_id id No					
                         <div class="form-group">
 							<label for="course_id" class="col-md-4 control-label">Course ID:</label>
 							
 							<div class="col-md-6">
-							<input id="course_id" type="textbox" class="form-control" name="course_id" placeholder="dip111">
+							<select id="course_id" type="textbox" class="form-control" name="course_id" placeholder="dip111">
+							
+							
 							</div>
-						</div>					
+						</div>	*/	-->	
 					 
-<!-- subject_id id No-->					
+<!-- subject_id id No					
                         <div class="form-group">
 							<label for="subject_id" class="col-md-4 control-label">Subject ID:</label>
 							
 							<div class="col-md-6">
 							<input id="subject_id" type="textbox" class="form-control" name="subject_id" placeholder="IT001">
 							</div>
-						</div>	
+						</div>		-->	
 						
-						
-					 <div class="form-group">
-						<div class="col-5">
-						  <label for="course_id" class="col-md-4 control-label">Subject ID T:</label>
-						 
-						  <select id="course_id" class="form-control-lg">
-						  <option value="1">Dip in IT</option>
-						  <option value="2">Dip in HW</option>  
-						  </select>
-						  </div>
-				
-					</div> 
 				
 				
 				<div class="form-group">
 						<div class="col-5">
 						  <label for="course_id" class="col-md-4 control-label">Subject ID T:</label>
 						 
-						 {!! Form::select('course_id',[''=>'choose course']+$courses, null,['class'=>'col-md-6 form-control'])!!}
+						 {!! Form::select('course_id',[''=>'choose course']+$courses, null,['class'=>'col-md-4 form-control'])!!}
 						  </div>
 				
 					</div> 

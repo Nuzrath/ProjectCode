@@ -11,4 +11,8 @@ class Subject extends Model
 	public function course(){
 		return $this->hasMany('App\Course');
 	}*/
+	protected $fillable =[
+	'name',
+	
+	];
 }

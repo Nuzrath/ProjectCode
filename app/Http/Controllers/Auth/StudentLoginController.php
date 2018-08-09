@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Course;
 
-class UserLoginController extends Controller
+class StudentLoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class UserLoginController extends Controller
      */
     public function index()
     {
-        //
+        	return view('students.stud_log');
     }
 
     /**
@@ -40,7 +40,7 @@ class UserLoginController extends Controller
     public function store(Request $request)
     {
         //
-		return $request->all();
+		//return $request->all();
     }
 
     /**

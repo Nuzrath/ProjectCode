@@ -17,6 +17,8 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+	
+	
 
     /*
     |--------------------------------------------------------------------------
@@ -45,6 +47,16 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+		/* start ====staff access control create for auth guard =======*/
+		'staff' => [
+            'driver' => 'session',
+            'provider' => 'staffs',
+        ],
+		'staff-api' => [
+            'driver' => 'token',
+            'provider' => 'staffs',
+        ],
+		/* end ====admin access control create by mee =======*/
     ],
 
     /*
@@ -69,7 +81,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+		/* start ====admin access control create by mee =======*/
+		'staffs' => [
+            'driver' => 'eloquent',
+            'model' => App\Staff::class,
+        ],
+	/* end ====admin access control create by mee =======*/
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -96,6 +113,11 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+		'staffs' => [
+            'provider' => 'staffs',
+            'table' => 'password_resets',
+            'expire' => 40,
         ],
     ],
 

@@ -36,10 +36,10 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-					<li> <a href="{{  url('/stdLogin') }}">Student login|</a></li>
-					<li> <a href="{{  url('/studentform') }}">Student Reg |</a></li>
-					<li> <a href="{{  url('/staffLogin') }}">Staff login |</a></li>
-						<li> <a href="{{  url('/staffform') }}">Staff Reg </a></li>
+					<li> <a href="{{  url('/student') }}">Student login|</a></li>
+					<li> <a href="{{  url('student/create') }}">Student Reg |</a></li>
+					<li> <a href="{{  url('/staff') }}">Staff login |</a></li>
+						<li> <a href="{{  url('/staff/create') }}">Staff Reg </a></li>
                     <!-- change to login then it will turn back to applications
 					<li><a href="{{ url('/studentform') }}">Student Application</a></li>
 						<li><a href="{{ url('/staffform') }}">Staff Application</a></li>

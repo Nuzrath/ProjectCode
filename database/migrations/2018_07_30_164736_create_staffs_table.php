@@ -14,7 +14,7 @@ class CreateStaffsTable extends Migration
     public function up()
     {
         Schema::create('staffs', function (Blueprint $table) {
-			$table->increments('staff_id')->unique()->autoIncrement();
+			$table->increments('staff_id')->index()->unique()->autoIncrement();
 			$table->string('fname')->default('M');
 			$table->string('lname')->default('lal');
 			$table->string('address')->nullable();
@@ -31,7 +31,7 @@ class CreateStaffsTable extends Migration
 			$table->string('certificates_img')->nullable();
 			$table->string('status')->nullable()->default('1');//1 is active 0 is not active
 			$table->string('staff_pic')->nullable();
-			$table->integer('role_id')->unsigned()->default('1');
+			$table->integer('role_id')->index()->unsigned()->default('1');
 			
 			/*$table->integer('department_id')->unsigned();*/
             $table->timestamps();

@@ -189,7 +189,7 @@
 				
 <!-- enrollment Date should be detact from create by -->
 						
-<!-- status 					
+<!--					
                         <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                             <label for="status" class="col-md-4 control-label">status</label>
 
@@ -205,9 +205,16 @@
                         </div>
 				-->	
 						
-					
+		<!-- ======role	-->			
 					 
-
+					<div class="form-group">
+						<div class="col-5">
+						  <label for="role_id" class="col-md-4 control-label">Role</label>
+						 
+						 {!! Form::select('role_id',[''=>'choose role']+$roles, 1,['class'=>'col-md-4 form-control'])!!}
+						  </div>
+				
+					</div> 
 						
 						
 						

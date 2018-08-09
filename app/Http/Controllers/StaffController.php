@@ -59,7 +59,7 @@ class StaffController extends Controller
 		
 		$staff->save();
 	
-		return redirect('/staffform')->with('response','Staff added sucessfully');
+		return redirect('/staff/create')->with('response','Staff added sucessfully');
 	
 	
 	}

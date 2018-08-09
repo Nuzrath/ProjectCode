@@ -34,8 +34,11 @@ Auth::routes();
 
 
 
-//All Resources for Auth\UserLoginController;
-Route::resource('/stafflogin','Auth\UserLoginController');
+//StudentController All Resources for Auth\StudentLoginController;
+Route::resource('/student','Auth\StudentLoginController');
+
+//StaffController All Resources for Auth\StudentLoginController;
+Route::resource('/staff','Auth\StaffLoginController');
 
 //for CourseController;
 Route::resource('/courselogin','CourseController');
@@ -63,9 +66,9 @@ Route::post('/addcontact','ContactController@addcontact');
 |--------------------------------------------------------------------------
 |*/
 
-
+/* 
 Route::get('/studentform', 'StudentController@studentform');
-/* link on student url */
+link on student url */
 
 Route::post('/addstudent', 'StudentController@addstudent');
 /* when click button On STUDENT it will send information to db using model */
@@ -78,22 +81,14 @@ Route::get('/stdLogin','StudentController@stdLogin');
 | STAFF SECTION 
 |--------------------------------------------------------------------------
 |*/
-
+/* 
 Route::get('/staffform', 'StaffController@create');
-/* link on staff url */
+link on staff url */
 
 Route::post('/addstaff', 'StaffController@addstaff');
 /* when click button on STAFF it will send information to db using model */ 
 
-Route::get('/staffLogin','Auth\StaffLoginController@login')->name('staff.login');
 
-//just check pullout from db
-Route::get('/staffform', function () {
-
-    $courses = DB::table('couse_subject')->get();
-
-    return view('userlogin.create', ['name' => $courses]);
-});
 /* 
 *
 |--------------------------------------------------------------------------
