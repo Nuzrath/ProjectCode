@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\AdminController;
+use App\Staff;
 
-class AdminController extends Controller
+class AdminStaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,11 @@ class AdminController extends Controller
     public function index()
     {
         //
-		return view('layouts.admin');
-	
+		
+		$staffs=Staff::all();
+		
+		
+		return view('admin.staffs.index',compact('staffs'));
     }
 
     /**

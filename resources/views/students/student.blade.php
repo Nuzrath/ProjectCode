@@ -242,7 +242,7 @@
 				
 				<div class="form-group">
 						<div class="col-5">
-						  <label for="course_id" class="col-md-4 control-label">Subject ID T:</label>
+						  <label for="course_id" class="col-md-4 control-label">Subject ID :</label>
 						 
 						 {!! Form::select('course_id',[''=>'choose course']+$courses, null,['class'=>'col-md-4 form-control'])!!}
 						  </div>

@@ -62,20 +62,34 @@ class StaffLoginController extends Controller
 		
 		//validate the form data
 		$this->validate($request, [
-		'email' => 'required|email',
-		'password' => 'required'
+		'email_id' => 'required',
+		//'contact1' => 'required'
 		]);
 		
 		//attempt to log the user in
-		if(Auth::guard('staff')->attempt(['email'=>$request->email, 'password'=> $request->password], $request->remember)){
+		if(Auth::guard('staff')->attempt('email_id'->$email_id, $request->remember))
+			//'contact1'->$password
+		{
 			//if successfull, then redirect to their inteded location
-			return redirect()->intended(route(''));
-		}
+			return redirect()->intended(route('staff.index'));
+			
 			
 		//if unsuccessful, then redirect to the login with the form
-		return redirect()->back()->withInput($request->only('email','remember'));
+		//return redirect()->back()->withInput($request->only('email','remember'));
+		
+		
+		/* Check validation
+		//from stackoverflow.com/questions/48063717/custom-login-laravel-5-5
+		
+		
+		if (auth()->attempt(['email' => $email, 'password' => $password])) {
+			echo "Login SuccessFull<br/>";;
+		} else {
+			echo "Login Failed Wrong Data Passed";
+		}
+		*/
 	}
-	
+	}
 
     public function show($id)
     {

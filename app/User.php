@@ -3,6 +3,7 @@
 namespace App;
 use App\Role;
 use App\Staff;
+use App\Student;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,11 +12,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 	
-	public function role()
-	{
-		return $this->belongsTo('App\Role');
-	}
-
+	
     /**
      * The attributes that are mass assignable.
      *
@@ -34,10 +31,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 	
+	
+	public function role()
+	{
+		return $this->belongsTo('App\Role');
+	}
+
 	public function staff(){
 		return $this->belongsTo('App\Staff');
 	}
 	
+	public function student(){
+		return $this->belongsTo('App\Student')
+	}
 	
 	
 }

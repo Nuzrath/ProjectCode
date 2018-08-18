@@ -25,7 +25,7 @@ class CreateStaffsTable extends Migration
 			$table->string('nic_no')->default('5555555555V');
 			$table->string('passport_no')->nullable();
 			$table->string('gender');
-			$table->string('email_id')->unique()->default('123@gmail.com');
+			$table->string('email')->unique()->default('123@gmail.com');
 			$table->string('qualification')->default('dip in english');
 			$table->date('date_of_appointed')->nullable();
 			$table->string('certificates_img')->nullable();

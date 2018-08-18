@@ -32,6 +32,12 @@ Route::get('/index', function(){
 
 Auth::routes();
 
+//admin master page
+/*
+Route::get('/admin', function(){
+
+});
+*/
 
 
 //StudentController All Resources for Auth\StudentLoginController;
@@ -42,6 +48,9 @@ Route::resource('/staff','Auth\StaffLoginController');
 
 //for CourseController;
 Route::resource('/courselogin','CourseController');
+
+//AdminStaffControler who created for staff controll by admin
+Route::resource('/admin/staff','AdminStaffController');
 
 
 
@@ -89,6 +98,7 @@ Route::post('/addstaff', 'StaffController@addstaff');
 /* when click button on STAFF it will send information to db using model */ 
 
 
+
 /* 
 *
 |--------------------------------------------------------------------------
@@ -97,7 +107,7 @@ Route::post('/addstaff', 'StaffController@addstaff');
 |*/
 
 
-Route::get('/admin','AdminController@showLoginForm')->name('admin.dashboard');
+Route::get('/admin','AdminController@index')->name('admin');
 /*
 Route::prefix('admin')->group(function(){
 	
