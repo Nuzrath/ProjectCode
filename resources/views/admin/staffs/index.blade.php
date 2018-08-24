@@ -4,6 +4,8 @@
 
 <h3>Staff List for Admin View </h3>
 
+@include('inc.form_responce')
+
 <div class="table-responsive">
     <table class="table">
       <thead>
@@ -15,6 +17,7 @@
 		  <th>Email</th>
           <th>Date of Birth</th>
           <th>Contact No</th>
+		  <th>create</th>
           
         </tr>
       </thead>
@@ -30,6 +33,7 @@
           <td>{{$staff->email_id}}</td>
           <td>{{$staff->dob}}</td>
           <td>{{$staff->contact1}}</td>
+		  <td>{{$staff->created_at->diffForHumans()}}</td>
 		@endforeach
 		@endif
         </tr>

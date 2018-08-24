@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use
+
 use Illuminate\Foundation\Http\FormRequest;
 
-class StaffLoginRequest extends FormRequest
+class AdminStaffRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,16 +27,18 @@ class StaffLoginRequest extends FormRequest
     {
         return [
             //
+			
 		'fname'=>'required',
 		'lname'=>'required',
 		'address'=>'required',
-		'country'=>'nullable',
-		'dob'=>'nullable',
-		'contact1'=>'required',
+		'country'=>'required',
+		'dob'=>'required',
+		'contact1'=>'required|mix10|numeric',
 		'contact2'=>'nullable',
 		'nic'=>'required',
 		'passport_no'=>'nullable',
 		'gender'=>'required',
 		'email'=>'required',
+        ];
     }
 }
