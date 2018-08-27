@@ -3,6 +3,7 @@
 use App\User;
 use App\Role;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes - for demoInstituteMgt
@@ -51,6 +52,9 @@ Route::resource('/courselogin','CourseController');
 
 //AdminStaffControler who created for staff controll by admin
 Route::resource('/admin/staff','AdminStaffController');
+
+//AdminStaffControler who created for staff controll by admin
+Route::resource('/admin/student','AdminStudentController');
 
 
 

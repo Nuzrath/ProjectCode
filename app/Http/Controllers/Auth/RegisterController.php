@@ -49,10 +49,21 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, 
-		[	'user_id' => 'required|string|max:255',
+		[	/*'user_id' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:6|confirmed',*/
 			
+		'fname'=>'required|string|max:255',
+		'lname'=>'required',
+		'address'=>'required',
+		'country'=>'nullable',
+		'dob'=>'nullable',
+		'contact1'=>'required',
+		'contact2'=>'nullable',
+		'nic'=>'required',
+		'passport_no'=>'nullable',
+		'gender'=>'required',
+		'email'=>'required|string|email|max:255|unique:users',
 			
         ]);
     }
@@ -65,11 +76,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-			'user_id' => $data['user_id'],
+        $user = User::create([
+			
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
 			
 		]);
+		
+		 Staff::create([
+            'user_id'           =>      $user->id,
+            'fname'    			=>      $data['fname'],
+            'lname'         	=>      $data['lname'],
+            'address'           =>      $data['address'],
+            'country'           =>      $data['country'],
+            'dob'	            =>      $data['dob'],
+            'contact1'          =>      $data['contact1'],
+            'contact2'          =>      $data['contact2'],
+			'passport_no'       =>      $data['passport_no'],
+			'gender'        	=>      $data['gender'],
+			'email'         	=>      $data['email'],
+            ]);
     }
 }
+

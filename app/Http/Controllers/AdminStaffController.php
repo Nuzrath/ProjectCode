@@ -8,8 +8,10 @@ use Collective\Html\Eloquent\FormAccessible;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\AdminStaffRequest;
 use App\Staff;
+use App\User;
 
 
 
@@ -51,6 +53,9 @@ class AdminStaffController extends Controller
      */
     public function store(Request $request)
     {
+		
+		//$input=$request->all();
+			
 		$this->validate($request,[
 		'fname'=>'required',
 		'lname'=>'required',
@@ -65,11 +70,9 @@ class AdminStaffController extends Controller
 		'email'=>'required',
 		
 		]);
-		
-        //
-		//Staff::create($request->all());
 				
 		$staff=new Staff;
+				
 		$staff->fname	 	= $request->input('fname');
 		$staff->lname 	 	= $request->input('lname');
 		$staff->address	 	= $request->input('address');
@@ -81,6 +84,13 @@ class AdminStaffController extends Controller
 		$staff->passport_no = $request->input('passport_no');
 		$staff->gender 		= $request->input('gender');
 		$staff->email_id 	= $request->input('email');
+		
+		$user=User::create([
+		'email'=>$staff->email_id,
+		'password'=>bcrypt($staff->contact1),
+		]);
+		$input['email']=$user->email;
+		$input['password']=$user->password;
 		
 		
 		$staff->save();

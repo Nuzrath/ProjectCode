@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use
-
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminStaffRequest extends FormRequest
