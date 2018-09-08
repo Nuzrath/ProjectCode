@@ -55,7 +55,7 @@ class AdminStaffController extends Controller
     {
 		
 		//$input=$request->all();
-			
+		
 		$this->validate($request,[
 		'fname'=>'required',
 		'lname'=>'required',
@@ -85,13 +85,25 @@ class AdminStaffController extends Controller
 		$staff->gender 		= $request->input('gender');
 		$staff->email_id 	= $request->input('email');
 		
+		
+		//start for connect this staff email & contact no1 as for User email & password = success.
+	/*	
+	***********
+	error is comming bcs of the same email id give an error 
+	Wee have to create error handling method in my webpage
+	******
+	
+	if($user=User::find($staff->email))
+		{
+			return redirect('auth/login');
+		}*/
 		$user=User::create([
 		'email'=>$staff->email_id,
 		'password'=>bcrypt($staff->contact1),
 		]);
 		$input['email']=$user->email;
 		$input['password']=$user->password;
-		
+		//end connect
 		
 		$staff->save();
 	

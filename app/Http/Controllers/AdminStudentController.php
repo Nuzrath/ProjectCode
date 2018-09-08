@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\Student;
 
 class AdminStudentController extends Controller
 {
@@ -15,6 +16,9 @@ class AdminStudentController extends Controller
     public function index()
     {
         //
+		$students = Student::all();
+		return view('admin.students.index', compact('students'));
+		
 		
     }
 
@@ -27,8 +31,8 @@ class AdminStudentController extends Controller
     {
         //
 			//pullout details to form from dba_close
-		$course =Course::pluck ('name','course_id')->all();
-		return view('admin.students.create',compact('course'));
+		$courses =Course::pluck ('name','course_id')->all();
+		return view('admin.students.create',compact('courses'));
 		
     }
 

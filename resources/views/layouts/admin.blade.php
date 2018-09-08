@@ -138,7 +138,7 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Students<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/posts">All Students</a>
+                                <a href="{{ route('student.index')}}">All Students</a>
                             </li>
 
                             <li>

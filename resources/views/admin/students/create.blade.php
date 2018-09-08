@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
 		<!-- ==== error checking ==
 		this will display if successfully saved on db -->
 		@if(count($errors)>0)
@@ -241,11 +241,11 @@
 				
 				
 				<div class="form-group">
-						<div class="col-5">
-						  <label for="course_id" class="col-md-4 control-label">Subject ID :</label>
+					  <label for="course_id" class="col-md-4 control-label">Subject ID :</label>
 						 
-						 {!! Form::select('course_id',[''=>'choose course']+ $courses, null,['class'=>'col-md-4 form-control'])!!}
-						  </div>
+						 <div class="col-md-6">
+						 {!! Form::select('course_id', $courses, null,['class'=>'form-control'])!!}
+						</div>  
 				
 					</div> 
 					
