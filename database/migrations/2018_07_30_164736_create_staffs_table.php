@@ -27,7 +27,6 @@ class CreateStaffsTable extends Migration
 			$table->string('gender');
 			$table->string('email')->unique();
 			$table->string('qualification')->default('dip in english');
-			$table->date('date_of_appointed')->nullable();
 			$table->string('certificates_img')->nullable();
 			$table->string('status')->nullable()->default('1');//1 is active 0 is not active
 			$table->string('staff_pic')->nullable();

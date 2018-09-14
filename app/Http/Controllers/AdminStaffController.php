@@ -67,7 +67,8 @@ class AdminStaffController extends Controller
 		'nic'=>'required',
 		'passport_no'=>'nullable',
 		'gender'=>'required',
-		'email'=>'required',
+        'email'=>'required',
+        'role_id'=>'nullable',
 		
 		]);
 				
@@ -83,8 +84,8 @@ class AdminStaffController extends Controller
 		$staff->nic_no		= $request->input('nic');
 		$staff->passport_no = $request->input('passport_no');
 		$staff->gender 		= $request->input('gender');
-		$staff->email_id 	= $request->input('email');
-		
+		$staff->email   	= $request->input('email');
+		$staff->role_id   	= $request->input('role_id');
 		
 		//start for connect this staff email & contact no1 as for User email & password = success.
 	/*	
@@ -98,10 +99,10 @@ class AdminStaffController extends Controller
 			return redirect('auth/login');
 		}*/
 		$user=User::create([
-		'email'=>$staff->email_id,
-		'password'=>bcrypt($staff->contact1),
+        'user'=>$staff->email,
+        'password'=>bcrypt($staff->contact1),
 		]);
-		$input['email']=$user->email;
+		$input['email']=$user->user;
 		$input['password']=$user->password;
 		//end connect
 		

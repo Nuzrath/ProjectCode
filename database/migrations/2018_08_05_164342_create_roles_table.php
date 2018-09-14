@@ -21,6 +21,9 @@ class CreateRolesTable extends Migration
     }
 
     /**
+     * 0 -> administrator
+     * 1 -> staff
+     * 2 -> student
      * Reverse the migrations.
      *
      * @return void

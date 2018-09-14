@@ -31,7 +31,7 @@ class CreateStudentsTable extends Migration
 			$table->integer('course_id');
 			$table->integer('subject_id');
 			
-			$table->integer('role_id')->index()->nullable()->unsigned()->default('2');
+			$table->integer('role_id')->index()->nullable()->unsigned();
             $table->timestamps();
         });
     }
