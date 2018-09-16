@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\AdminStaffRequest;
 use App\Staff;
 use App\User;
+use App\Role;
 
 
 
@@ -41,8 +42,11 @@ class AdminStaffController extends Controller
     {
         //
 		
-		//$users=User::create
-		return view('admin.staffs.create');
+        //$users=User::create
+        	//pullout details to form from dba_close
+		$roles =Role::pluck ('name','id')->all();
+		return view('admin.staffs.create',compact('roles'));
+
     }
 
     /**
@@ -93,22 +97,28 @@ class AdminStaffController extends Controller
 	error is comming bcs of the same email id give an error 
 	Wee have to create error handling method in my webpage
 	******
-	
-	if($user=User::find($staff->email))
+	*/
+	if($user=User::find($staff->email || $staff->user->email))
 		{
-			return redirect('auth/login');
-		}*/
-		$user=User::create([
-        'user'=>$staff->email,
+			return redirect('admin/staff')->with('response','Email already exist');
+		}else{
+        $user=User::create
+        ([
+        'email'=>$staff->email,
         'password'=>bcrypt($staff->contact1),
-		]);
-		$input['email']=$user->user;
-		$input['password']=$user->password;
+        'role_id'=>$staff->role_id,
+        ]);
+        
+
+        $input['email']=$user->email;
+        $input['password']=$user->password;
+        $input['role_id']=$user->id;
 		//end connect
 		
 		$staff->save();
 	
-		return redirect('admin/staff')->with('response','Staff added sucessfully');
+        return redirect('admin/staff')->with('response','Staff added sucessfully');
+        }
     }
 
     /**

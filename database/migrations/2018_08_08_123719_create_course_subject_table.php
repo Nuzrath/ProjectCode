@@ -16,7 +16,10 @@ class CreateCourseSubjectTable extends Migration
         Schema::create('couse_subject', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('course_id')->index()->nullable()->unsigned();
-			$table->integer('subject_id')->index()->nullable()->unsigned();
+            $table->integer('subject_id')->index()->nullable()->unsigned();
+            $table->string('duration');
+            $table->integer('fee_id')->index()->unsigned()->nullable();//for just checking nullable
+            $table->integer('discount_id');
             $table->timestamps();
         });
     }

@@ -50,11 +50,16 @@ Route::resource('/staff','Auth\StaffLoginController');
 //for CourseController;
 Route::resource('/courselogin','CourseController');
 
+/*=====Admin __________________controller here */
+
 //AdminStaffControler who created for staff controll by admin
 Route::resource('/admin/staff','AdminStaffController');
 
 //AdminStaffControler who created for staff controll by admin
 Route::resource('/admin/student','AdminStudentController');
+
+//AdminCourseController Admin for course
+Route::resource('/admin/course', 'AdminCourseController');
 
 
 

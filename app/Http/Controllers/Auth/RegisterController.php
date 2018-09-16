@@ -78,7 +78,8 @@ class RegisterController extends Controller
     {
         $user = User::create([
 			
-            'email' => $data['email'],
+            //'email' => $data['email'], i changed as follow for my db
+            'email'=>$data['email'],
             'password' => bcrypt($data['password']),
 			
 		]);

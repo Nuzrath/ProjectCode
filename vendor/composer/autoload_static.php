@@ -327,6 +327,7 @@ class ComposerStaticInitb98b35dc1dde74799fc8ab01c11b5741
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Fee' => __DIR__ . '/../..' . '/app/Fee.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+        'App\\Http\\Controllers\\AdminCourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminCourseController.php',
         'App\\Http\\Controllers\\AdminStaffController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminStaffController.php',
         'App\\Http\\Controllers\\AdminStudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminStudentController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

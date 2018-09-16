@@ -12,6 +12,7 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Fee' => $baseDir . '/app/Fee.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
+    'App\\Http\\Controllers\\AdminCourseController' => $baseDir . '/app/Http/Controllers/AdminCourseController.php',
     'App\\Http\\Controllers\\AdminStaffController' => $baseDir . '/app/Http/Controllers/AdminStaffController.php',
     'App\\Http\\Controllers\\AdminStudentController' => $baseDir . '/app/Http/Controllers/AdminStudentController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',

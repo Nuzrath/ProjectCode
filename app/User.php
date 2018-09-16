@@ -20,7 +20,7 @@ class User extends Authenticatable
      */
 		 
     protected $fillable = [
-         'user', 'password', 'role_id',
+         'email', 'password', 'role_id',
     ];
 
     /**
@@ -46,13 +46,7 @@ class User extends Authenticatable
 		return $this->belongsTo('App\Student');
 	}
 	
-	/*public function profile()
-    {
-        return $this->hasOne(Profile::class);
-    }
-	it take from  best details
-	https://laracasts.com/discuss/channels/laravel/how-to-create-a-profile-from-registration-form-data?page=1
-	*/
+
     
 	
 }
