@@ -11,32 +11,15 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-						<!-- User type for bict portal -->
-						<!--
-						<div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-                            <label for="type" class="col-md-4 control-label">User type </label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="type" type="input" class="form-control" name="type" value="{{ old('type') }}">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('type'))
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('type') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div> -->
-						<!-- end bict user type -->
-						
-                        <div class="form-group{{ $errors->has('user') ? ' has-error' : '' }}">
-                            <label for="user" class="col-md-4 control-label">E-Mail Address or User Name</label>
-
-                            <div class="col-md-6">
-                                <input id="user" type="user" class="form-control" name="user" value="{{ old('user') }}" required autofocus>
-
-                                @if ($errors->has('user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('user') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>

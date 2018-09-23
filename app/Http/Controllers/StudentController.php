@@ -28,22 +28,7 @@ class StudentController extends Controller
 		]);
 		return "validation pass";-===*/
 		
-		$this->validate($request,[
-		'fname'=>'required',
-		'lname'=>'required',
-		'address'=>'nullable',
-		'city'=>'required',
-		'country'=>'nullable',
-		'dob'=>'required',
-		'contact1'=>'required',
-		'contact2'=>'nullable',
-		'nic'=>'nullable',
-		'passport_no'=>'nullable',
-		'gender'=>'required',
-		'email'=>'nullable',
-		/* student image should take*/
 		
-		]);
 		
 		/* testing 4th success
 		return "validation pass";*/

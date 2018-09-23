@@ -71,7 +71,7 @@ class AdminStaffController extends Controller
 		'nic'=>'required',
 		'passport_no'=>'nullable',
 		'gender'=>'required',
-        'email'=>'required',
+        'email'=>'required|unique:users',
         'role_id'=>'nullable',
 		
 		]);
@@ -97,19 +97,25 @@ class AdminStaffController extends Controller
 	error is comming bcs of the same email id give an error 
 	Wee have to create error handling method in my webpage
 	******
-	*/
-	if($user=User::find($staff->email || $staff->user->email))
-		{
-			return redirect('admin/staff')->with('response','Email already exist');
-		}else{
+    */
+    
+    /* https://laravel.com/api/5.5/Illuminate/Database/Eloquent/Builder.html#method_findOrNew
+    
+    */
+	// if($user=User::where($staff->email || $staff->user->email))
+	// 	{
+	// 		return redirect('admin/staff')->with('response','Email already exist');
+    // 	}else
+    {
         $user=User::create
         ([
+        //'user_id'=>$staff->staff_id,
         'email'=>$staff->email,
         'password'=>bcrypt($staff->contact1),
         'role_id'=>$staff->role_id,
         ]);
         
-
+        //$input['user_id']=$user->user_id;
         $input['email']=$user->email;
         $input['password']=$user->password;
         $input['role_id']=$user->id;
@@ -138,9 +144,13 @@ class AdminStaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($staff_id)
     {
         //
+        $staff = Staff::findOrFail($staff_id);
+
+        return view('admin.staffs.edit',compact('staff'));
+
     }
 
     /**
@@ -153,6 +163,7 @@ class AdminStaffController extends Controller
     public function update(Request $request, $id)
     {
         //
+            return $request->all();
     }
 
     /**

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\AdminController;
-use App\User;
+use App\Http\Controllers\Controller;
+use App\Subject;
+use App\Http\Requests\AdminSubjectRequest;
 
-class AdminController extends Controller
+class AdminSubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +17,10 @@ class AdminController extends Controller
     public function index()
     {
         //
-        $users=User::all();
+        $subjects = Subject::all();
+        return view('admin.subjects.index', compact('subjects'));
 
-		return view('admin.index',compact('users'));
-	
+
     }
 
     /**
@@ -29,7 +30,10 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        //pullout subject details from db
+       // $subjects = Subject::pluck('name','subject_id')->all();
+        
+        return view('admin.subjects.create');
     }
 
     /**
@@ -38,11 +42,18 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminSubjectRequest $request)
     {
-        //
-    }
+        //     return $request->all();
+        $subjects= new Subject;
 
+        $subjects->name = $request->input('name');
+
+        $subjects->save();
+
+        return redirect(route('subject.index'))->with('response','Subject Added Successfully');
+
+    }
     /**
      * Display the specified resource.
      *

@@ -61,6 +61,9 @@ Route::resource('/admin/student','AdminStudentController');
 //AdminCourseController Admin for course
 Route::resource('/admin/course', 'AdminCourseController');
 
+//AdminSubjectController Admin for Subject
+Route::resource('/admin/subject', 'AdminSubjectController');
+
 
 
 
@@ -126,3 +129,7 @@ Route::prefix('admin')->group(function(){
 
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
 });*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

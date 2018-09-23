@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 use App\Student;
+use App\Http\Requests\AdminStudentRequest;
 
 class AdminStudentController extends Controller
 {
@@ -29,9 +30,10 @@ class AdminStudentController extends Controller
      */
     public function create()
     {
-        //
-			//pullout details to form from dba_close
-		$courses =Course::pluck ('name','course_id')->all();
+        //Please note that lists has been renamed to pluck. 
+        //The method signatures are the same so for laravel 5.4 it would be $customer->dogs->pluck('id')->all()
+		//pullout details to form from dba_close
+		$courses =Course::pluck ('name','course_id', 'fee')->all();
 		return view('admin.students.create',compact('courses'));
 		
     }
@@ -42,9 +44,30 @@ class AdminStudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminStudentRequest $request)
     {
         //
+        $student = new Student;
+
+        $student->fname = $request->input('fname');
+        $student->lname = $request->input('lname');
+        $student->address = $request->input('address');
+        $student->city = $request->input('city');
+        $student->country = $request->input('country');
+        $student->dob = $request->input('dob');
+        $student->contact1 = $request->input('contact1');
+        $student->contact2 = $request->input('contact2');
+        $student->nic = $request->input('nic');
+        $student->passport_no = $request->input('passport_no');
+        $student->gender = $request->input('gender');
+        $student->email = $request->input('email');
+        $student->course_id = $request->input('course_id');
+
+        $student->save();
+
+        return redirect('admin/student')->with('response','Student added sucessfully');
+
+        
     }
 
     /**

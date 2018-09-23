@@ -1,26 +1,55 @@
 @extends('layouts.admin')
 
-
-
 @section('content')
-<div class="container">
-    <div class="row">
-        <!-- <div class="col-md-10 col-md-offset-2"> Regular-->
-		<div class="col-md-10">
-            <div class="panel panel-default">
-                <div class="panel-heading">ADMIN Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<h3>Admin Dashboard for User</h3>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+@include('inc.form_responce')
+
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>user id</th>
+          <th>User Name</th>
+          <th>password </th>
+          <th>role </th>
+          <th>created </th>
+          <th>updated </th>
+          
+        </tr>
+      </thead>
+      <tbody>
+
+        @if($users)
+          @foreach ($users as $user)
+          <tr>
+            <td>{{$user->id}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->password}}</td>
+            <td>{{$user->role->name}}</td>
+            <td>{{$user->created_at->diffForHumans()}}</td>
+            <td>{{$user->updated_at->diffForHumans()}}</td>
+        
+          @endforeach
+
+        @endif
+      </tr>
+     {{-- /*
+	  @if($staffs)
+		  @foreach($staffs as $staff)
+        <tr>
+          <td>{{$staff->staff_id}}</td>
+          <td>{{$staff->fname}}</td>
+          
+		  <td>{{$staff->created_at->diffForHumans()}}</td>
+		@endforeach
+		@endif
+        </tr>*/ --}}
+      </tbody>
+    </table>
+  </div>
+
+@stop
+
+

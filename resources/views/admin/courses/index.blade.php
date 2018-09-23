@@ -12,6 +12,8 @@
         <tr>
           <th>Course id</th>
           <th>Course Name</th>
+          <th>Duration </th>
+          <th>Course Fee </th>
           <th>created </th>
           <th>updated </th>
           
@@ -24,6 +26,8 @@
           <tr>
             <td>{{$course->course_id}}</td>
             <td>{{$course->name}}</td>
+            <td>{{$course->duration}}</td>
+            <td>{{$course->fee}}</td>
             <td>{{$course->created_at->diffForHumans()}}</td>
             <td>{{$course->updated_at->diffForHumans()}}</td>
         

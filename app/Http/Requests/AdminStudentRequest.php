@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminCourseRequest extends FormRequest
+class AdminStudentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,20 @@ class AdminCourseRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required',
-            'duration'=>'required',
-            'fee'=>'required',
+        'fname'=>'required',
+		'lname'=>'required',
+		'address'=>'nullable',
+		'city'=>'required',
+		'country'=>'nullable',
+		'dob'=>'required',
+		'contact1'=>'required',
+		'contact2'=>'nullable',
+		'nic'=>'nullable',
+		'passport_no'=>'nullable',
+		'gender'=>'required',
+        'email'=>'nullable',
+        'course_id'=>'required',
+		/* student image should take*/
         ];
     }
 }

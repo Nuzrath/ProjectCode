@@ -14,9 +14,12 @@ class Staff extends Model
 	{
 		$user = User::find(1);
 		Auth::login($user);
-	}*/
-	
-	public $table = "staffs";
+    }*/
+    
+
+    public $table = "staffs";
+    
+    protected $primaryKey = 'staff_id';
 	
 	public function user(){
 		

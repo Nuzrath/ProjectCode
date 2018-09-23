@@ -9,31 +9,45 @@
                     <div class="panel-heading">Course Create by Admin</div>
     
                     <div class="panel-body">
-                      
-                      {!! Form::open(['method'=>'POST', 'action'=> 'AdminCourseController@store']) !!}
+                        {!! Form::open(['method'=>'POST', 'action'=> 'AdminCourseController@store']) !!}
 
-                        <div class="form-group">
-                        
-                            {!! Form::label('name', 'Course Name :' ) !!}
+                            <div class="form-group">
                             
-                            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                                {!! Form::label('name', 'Course Name :' ) !!}
+                                
+                                {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                                
+                            </div>
+
+                            <div class="form-group">
                             
-                        </div>
+                                {!! Form::label('duration', 'Duration :' ) !!}
+                                
+                                {!! Form::text('duration', null, ['class'=>'form-control']) !!}
+                                
+                            </div>
 
-                        
-                        <div class="form-group">
-                            {!! Form::submit('Add Course') !!}
-                        </div>
-                        
-                        
+                            <div class="form-group">
+                            
+                                    {!! Form::label('fee', 'Fee Amount :' ) !!}
+                                    
+                                    {!! Form::text('fee', null, ['class'=>'form-control']) !!}
+                                    
+                            </div>
+
+                            
+                            <div class="form-group">
+                                {!! Form::submit('Add Course') !!}
+                            </div>
+                            
+                            
 
 
 
 
-                      {!! Form::close() !!}
-                         
+                        {!! Form::close() !!}
 
-                     </div><!--//end panel body -->
+                    </div><!--//end panel body -->
                 </div> <!--//end  panel default end--->
             </div><!--//col md closer-->
         </div><!-- //row closer-->

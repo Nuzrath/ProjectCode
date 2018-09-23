@@ -150,6 +150,7 @@
                     </li>
 
 
+                    <!-- =========Courses links ========= --->
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Courses<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -164,6 +165,24 @@
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
+
+                    <!-- =========Subjects links ========= --->
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Subjects<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('subject.index')}}">All Subjects</a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('subject.create')}}">Create Subject</a>
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
 
 
                     <li>

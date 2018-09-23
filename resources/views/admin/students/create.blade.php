@@ -23,7 +23,7 @@
                 <div class="panel-heading">Student Register</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('/addstudent') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('student.store') }}">
                         {{ csrf_field() }}
 <!-- This is my work-->
 
@@ -241,17 +241,16 @@
 				
 				
 				<div class="form-group">
-					  <label for="course_id" class="col-md-4 control-label">Subject ID :</label>
-						 
-						 <div class="col-md-6">
-						 {!! Form::select('course_id', $courses, null,['class'=>'form-control'])!!}
-						</div>  
+                    <label for="course_id" class="col-md-4 control-label">Course ID :</label>
+                    <div class="col-md-6">
+					{!! Form::select('course_id', $courses, null,['class'=>'form-control'])!!}
+                    </div>
 				
-					</div> 
-					
-						
-						
-						
+			    </div> 
+                    
+                    </div> 
+
+                   
 						
 						
 						
