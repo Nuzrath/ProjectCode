@@ -31,13 +31,14 @@
             {!! Form::text('address', null, ['class' => 'form-control',]) !!}
         </div>
 
+
         <div class="form-group">
-            {!! Form::label('email', 'Email Address:', ['class' => 'col-lg-2 control-label']) !!}
+            {!! Form::label('country', 'Address:', ['class' => 'col-lg-2 control-label']) !!}
     
-            {{--  {!! Form::email('email', null, ['class' => 'form-control',]) !!}  --}}
-            {{$staff->email}}
+            {!! Form::text('country', null, ['class' => 'form-control',]) !!}
         </div>
         
+
         <div class="form-group">
             {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-lg-2 control-label']) !!}
     
@@ -70,9 +71,37 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('status', 'Status :', ['class' => 'col-lg-2 control-label']) !!}
+            {!! Form::label('gender', 'Gender :', ['class' => 'form-check-label']) !!}
+           
+                
+                    {!! Form::label('male', 'MALE') !!}
+                    {!! Form::radio('gender', 'male', ['id' => 'gender']) !!}
+ 
+               
+                    {!! Form::label('female', 'FEMALE') !!}
+                    {!! Form::radio('gender', 'female', ['id' => 'gender']) !!}
+                
+          
+        </div>
+
+
+
+        <div class="form-group">
+            {!! Form::label('email', 'Email Address:', ['class' => 'col-lg-2 control-label']) !!}
     
-            {!! Form::text('status', null, ['class' => 'form-control',]) !!}
+            {{--  {!! Form::email('email', null, ['class' => 'form-control',]) !!}  --}}
+            {{$staff->email}}
+        </div>
+        
+       
+
+        
+
+      
+        <div class="form-group">
+            {!! Form::label('status', 'Status :', ['class' => 'col-lg-2 control-label']) !!}
+            
+            {!! Form::select('status', array(1=>'Active', 2=>'Not Active'), ['class' => 'col-lg-6 form-control',]) !!}
         </div>
 
         

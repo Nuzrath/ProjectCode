@@ -18,6 +18,7 @@
           <th>Date of Birth</th>
           <th>Contact No</th>
           <th>NIC No </th>
+          <th>Gender </th>
           <th>Status</th>
         <th>appointed</th>
         <th>Updated </th>
@@ -38,6 +39,7 @@
           <td>{{$staff->dob}}</td>
           <td>{{$staff->contact1}}</td>
           <td>{{ $staff->nic_no ? $staff->nic_no : $staff->passport_no}}</td>
+          <td>{{$staff->gender}}</td>
           <td>{{$staff->status = 1 ? "Active" : "Not Active"}}          </td>
           <td>{{$staff->created_at->format('d/m/y')}}</td>
 		  <td>{{$staff->updated_at->diffForHumans()}}</td>
