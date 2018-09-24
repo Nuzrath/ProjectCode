@@ -109,7 +109,7 @@
            
         
         <div class="form-group">
-        {!! Form::submit("submit", ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('update staff', ['class'=>'btn btn-primary']) !!}
         </div>
 
 

@@ -2,6 +2,7 @@
 
 use App\User;
 use App\Role;
+use App\Http\Middleware\Admin;
 
 
 /*
@@ -41,16 +42,22 @@ Route::get('/admin', function(){
 */
 
 
-//StudentController All Resources for Auth\StudentLoginController;
-Route::resource('/student','Auth\StudentLoginController');
+// //StudentController All Resources for Auth\StudentLoginController;
+// Route::resource('/student','Auth\StudentLoginController');
 
-//StaffController All Resources for Auth\StudentLoginController;
-Route::resource('/staff','Auth\StaffLoginController');
+// //StaffController All Resources for Auth\StudentLoginController;
+// Route::resource('/staff','Auth\StaffLoginController');
 
-//for CourseController;
-Route::resource('/courselogin','CourseController');
+// //for CourseController;
+// Route::resource('/courselogin','CourseController');
 
+
+
+
+Route::group(['middleware' => 'admin'], function () {
 /*=====Admin __________________controller here */
+
+Route::get('/admin','AdminController@index')->name('admin');
 
 //AdminStaffControler who created for staff controll by admin
 Route::resource('/admin/staff','AdminStaffController');
@@ -63,6 +70,9 @@ Route::resource('/admin/course', 'AdminCourseController');
 
 //AdminSubjectController Admin for Subject
 Route::resource('/admin/subject', 'AdminSubjectController');
+    
+});
+
 
 
 
@@ -119,7 +129,7 @@ Route::post('/addstaff', 'StaffController@addstaff');
 |*/
 
 
-Route::get('/admin','AdminController@index')->name('admin');
+
 /*
 Route::prefix('admin')->group(function(){
 	

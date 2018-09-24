@@ -4,6 +4,7 @@ namespace App;
 use App\Role;
 use App\Staff;
 use App\Student;
+use Auth;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -45,7 +46,16 @@ class User extends Authenticatable
 	public function student(){
 		return $this->belongsTo('App\Student');
 	}
-	
+    
+    public function isAdmin(){
+
+        //check the admin
+        if($this->role->name=="administrator"){
+
+            return true;
+        }
+        return false;
+    }
 
     
 	

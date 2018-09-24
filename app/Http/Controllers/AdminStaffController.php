@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+//use App\Http\Controllers\Auth;
+use Auth;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Collective\Html\Eloquent\FormAccessible;
@@ -163,7 +166,12 @@ class AdminStaffController extends Controller
     public function update(Request $request, $id)
     {
         //
-            return $request->all();
+            $staff=Staff::pluck('staff_id')->all();
+            $input = $request->all();
+
+            Auth::user()->staff()->whereid($staff_id)->first()->update($input);
+
+            return redirect('staff.index')->with('responce', 'Successfully staff record updated');
     }
 
     /**
