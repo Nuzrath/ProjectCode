@@ -152,7 +152,9 @@ class AdminStaffController extends Controller
         //
         $staff = Staff::findOrFail($staff_id);
 
-        return view('admin.staffs.edit',compact('staff'));
+        $roles =Role::pluck ('name','id')->all();
+
+        return view('admin.staffs.edit',compact('staff', 'roles'));
 
     }
 
@@ -163,11 +165,14 @@ class AdminStaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $staff_id)
     {
         //
-            $staff=Staff::pluck('staff_id')->all();
+            // $staff=Staff::pluck('staff_id')->all();
             $input = $request->all();
+
+            //$user = $request->input($user->id)
+           
 
             Auth::user()->staff()->whereid($staff_id)->first()->update($input);
 

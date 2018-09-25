@@ -41,7 +41,7 @@
 		  <td>{{$student->nic}}</td>
           <td>{{$student->email}}</td>
           
-         <td>{{$student->course_id->name}}</td>
+         <td>{{$student->id->name}}</td>
          {{-- // <td>{{$student->course->duration}}</td> --}}
 		  <td>{{$student->created_at->diffForHumans()}}</td>
 		  <td>{{$student->updated_at->diffForHumans()}}</td>

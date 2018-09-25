@@ -94,15 +94,21 @@
         </div>
         
        
-
-        
-
-      
         <div class="form-group">
             {!! Form::label('status', 'Status :', ['class' => 'col-lg-2 control-label']) !!}
             
-            {!! Form::select('status', array(1=>'Active', 2=>'Not Active'), ['class' => 'col-lg-6 form-control',]) !!}
+            {!! Form::select('status', array(1=>'Active', 2=>'Not Active'),null, ['class' => 'form-control',]) !!}
         </div>
+
+        <div class="form-group">
+            {!! Form::label('role_id', 'Role :', ['class' => 'col-lg-2 control-label']) !!}
+
+            {!! Form::select('role_id', $roles, null,['class'=>'form-control',])!!}
+        </div>  
+    
+        </div>
+
+
 
         
         

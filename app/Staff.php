@@ -23,11 +23,11 @@ class Staff extends Model
 	
 	public function user(){
 		
-		return $this->hasOne('App\User');
+		return $this->belongsTo('App\User');
 	}
 	
 	public function role(){
-		return $this->hasOne('App\Role');
+		return $this->belongsTo('App\Role');
 		
 	}
 	

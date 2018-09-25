@@ -241,9 +241,9 @@
 				
 				
 				<div class="form-group">
-                    <label for="course_id" class="col-md-4 control-label">Course ID :</label>
+                    <label for="id" class="col-md-4 control-label">Course ID :</label>
                     <div class="col-md-6">
-					{!! Form::select('course_id', $courses, null,['class'=>'form-control'])!!}
+					{!! Form::select('id', $courses, null,['class'=>'form-control'])!!}
                     </div>
 				
 			    </div> 

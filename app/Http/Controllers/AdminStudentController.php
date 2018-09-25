@@ -33,7 +33,7 @@ class AdminStudentController extends Controller
         //Please note that lists has been renamed to pluck. 
         //The method signatures are the same so for laravel 5.4 it would be $customer->dogs->pluck('id')->all()
 		//pullout details to form from dba_close
-		$courses =Course::pluck ('name','course_id', 'fee')->all();
+		$courses =Course::pluck ('name','id', 'fee')->all();
 		return view('admin.students.create',compact('courses'));
 		
     }

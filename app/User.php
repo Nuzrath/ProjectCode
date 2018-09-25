@@ -19,6 +19,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $primaryKey= 'id';
 		 
     protected $fillable = [
          'email', 'password', 'role_id',
@@ -40,7 +41,7 @@ class User extends Authenticatable
 	}
 
 	public function staff(){
-		return $this->belongsTo('App\Staff');
+		return $this->hasOne('App\Staff');
 	}
 	
 	public function student(){
