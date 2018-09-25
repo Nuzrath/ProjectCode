@@ -9,10 +9,10 @@ class Course extends Model
 {
     //
     protected $fillable = [
-        'name', 'duration',
+        'name', 'duration', 'course_fee',
     ];
-    
-	public function subject(){
+
+	public function subjects(){
 		return $this->belongsToMany('App\Subject');
     }
     

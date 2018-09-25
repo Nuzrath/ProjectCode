@@ -10,6 +10,8 @@
 
         @include('inc.form_responce')
 
+        @include('inc.form_error')
+
         
         {!! Form::model($staff, ['method'=>'PATCH', 'action'=> ['AdminStaffController@update', $staff->staff_id]] ) !!}
 

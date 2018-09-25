@@ -75,6 +75,8 @@ class AdminCourseController extends Controller
     public function edit($id)
     {
         //
+        $course = Course::findOrFail($id);
+        return view('admin.courses.edit', compact('course'));
     }
 
     /**
@@ -87,6 +89,14 @@ class AdminCourseController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //return $request->all(); success
+        $course = Course::findOrFail($id);
+
+        $input = $request->all();
+
+        $course->update($input);
+
+        return redirect(route('course.index'))->with('response','successfully updated Course');
     }
 
     /**

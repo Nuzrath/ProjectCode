@@ -26,8 +26,8 @@ class CreateStudentsTable extends Migration
 			$table->string('nic')->nullable();//nic no or Passport no
 			$table->string('gender');
 			$table->string('email')->nullable();
-			$table->string('is_active')->default('1');//1= active, 0 = not active
-			$table->integer('course_id');
+			$table->integer('is_active')->default('1');//1= active, 0 = not active
+			$table->integer('course_id')->unsigned();
 			
 			$table->integer('role_id')->index()->nullable()->unsigned();
             $table->timestamps();

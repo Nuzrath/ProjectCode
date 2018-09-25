@@ -24,10 +24,10 @@
         @if($courses)
           @foreach ($courses as $course)
           <tr>
-            <td>{{$course->course_id}}</td>
-            <td>{{$course->name}}</td>
+            <td>{{$course->id}}</td>
+            <td><a href="{{ route('course.edit', $course->id )}}">{{$course->name}}</a></td>
             <td>{{$course->duration}}</td>
-            <td>{{$course->fee}}</td>
+            <td>{{$course->course_fee}}</td>
             <td>{{$course->created_at->diffForHumans()}}</td>
             <td>{{$course->updated_at->diffForHumans()}}</td>
         
