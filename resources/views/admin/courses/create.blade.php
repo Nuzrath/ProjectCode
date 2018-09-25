@@ -29,9 +29,9 @@
 
                             <div class="form-group">
                             
-                                    {!! Form::label('fee', 'Fee Amount :' ) !!}
+                                    {!! Form::label('course_fee', 'Fee Amount :' ) !!}
                                     
-                                    {!! Form::text('fee', null, ['class'=>'form-control']) !!}
+                                    {!! Form::text('course_fee', null, ['class'=>'form-control']) !!}
                                     
                             </div>
 

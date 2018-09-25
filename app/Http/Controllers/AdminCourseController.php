@@ -47,7 +47,7 @@ class AdminCourseController extends Controller
 
       $courses->name = $request->input('name');
       $courses->duration = $request->input('duration');
-      $courses->fee  = $request->input('fee');
+      $courses->course_fee  = $request->input('course_fee');
 
       $courses->save();
 

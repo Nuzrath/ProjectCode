@@ -27,7 +27,7 @@ class AdminCourseRequest extends FormRequest
             //
             'name'=>'required',
             'duration'=>'required',
-            'fee'=>'required',
+            'course_fee'=>'required',
         ];
     }
 }
