@@ -4,7 +4,9 @@
 
 <div class="container-fluid">
         <div class="row">
+           
             <div class="col-md-12">
+                	@include('inc.form_error')
                 <div class="panel panel-default">
                     <div class="panel-heading">Course Create by Admin</div>
     
@@ -51,6 +53,7 @@
                 </div> <!--//end  panel default end--->
             </div><!--//col md closer-->
         </div><!-- //row closer-->
+
 </div> <!--//end container fluid-->
 
 @stop

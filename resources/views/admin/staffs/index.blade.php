@@ -40,7 +40,7 @@
           <td>{{$staff->contact1}}</td>
           <td>{{ $staff->nic_no ? $staff->nic_no : $staff->passport_no}}</td>
           <td>{{$staff->gender}}</td>
-          <td>{{$staff->status = 1 ? "Active" : "Not Active"}}          </td>
+          <td>{{$staff->status == 1? "Active" : "Not Active"}}          </td>
           <td>{{$staff->created_at->format('d/m/y')}}</td>
           <td>{{$staff->updated_at->diffForHumans()}}</td>
           <td>{{$staff->role->name}}</td>

@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\AdminStaffRequest;
+use App\Http\Requests\StaffEditRequest;
 use App\Staff;
 use App\User;
 use App\Role;
@@ -150,6 +151,7 @@ class AdminStaffController extends Controller
     public function edit($staff_id)
     {
         //
+        
         $staff = Staff::findOrFail($staff_id);
 
         $roles =Role::pluck ('name','id')->all();
@@ -165,18 +167,21 @@ class AdminStaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $staff_id)
+    public function update(Request $request, $id)
     {
-        //
-            // $staff=Staff::pluck('staff_id')->all();
-            $input = $request->all();
+       Staff::where('staff_id', $id)->update($request->except(['_method','_token']));
+        return redirect('admin/staff')->with('response','Staff updated sucessfully');
+      
 
-            //$user = $request->input($user->id)
-           
+        
+        // //$input['email']=$user->email;
 
-            Auth::user()->staff()->whereid($staff_id)->first()->update($input);
+        
+        
 
-            return redirect('staff.index')->with('responce', 'Successfully staff record updated');
+        
+
+       // https://stackoverflow.com/questions/43614815/what-is-the-update-method-in-laravel-5-4-crud
     }
 
     /**

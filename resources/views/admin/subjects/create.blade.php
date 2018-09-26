@@ -13,22 +13,18 @@
                       {!! Form::open(['method'=>'POST', 'action'=> 'AdminSubjectController@store']) !!}
 
                         <div class="form-group">
-                        
-                            {!! Form::label('name', 'Subject Name :' ) !!}
+                           
+                                {!! Form::label('name', 'Subject Name :' ) !!}
                             
-                            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                                {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                                
+                            </div>
+    
                             
-                        </div>
-
-                        
-                        <div class="form-group">
-                            {!! Form::submit('Add Subject') !!}
-                        </div>
-                        
-                        
-
-
-
+                            <div class="form-group">
+                                {!! Form::submit('Add Subject') !!}
+                            </div>
+                            
 
                       {!! Form::close() !!}
                          

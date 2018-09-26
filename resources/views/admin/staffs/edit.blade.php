@@ -76,11 +76,11 @@
             {!! Form::label('gender', 'Gender :', ['class' => 'form-check-label']) !!}
            
                 
-                    {!! Form::label('male', 'MALE') !!}
+                    {!! Form::label('male', 'MALE', null) !!}
                     {!! Form::radio('gender', 'male', ['id' => 'gender']) !!}
  
                
-                    {!! Form::label('female', 'FEMALE') !!}
+                    {!! Form::label('female', 'FEMALE', null) !!}
                     {!! Form::radio('gender', 'female', ['id' => 'gender']) !!}
                 
           

@@ -16,6 +16,18 @@ class Staff extends Model
 		Auth::login($user);
     }*/
     
+    protected $fillable=[
+        'fname', 'lname', 'address',
+        'country',
+		'dob',
+		'contact1',
+		'contact2',
+		'nic',
+		'passport_no',
+        'gender',
+        'status',
+        'role_id',
+    ];
 
     public $table = "staffs";
     
@@ -23,7 +35,7 @@ class Staff extends Model
 	
 	public function user(){
 		
-		return $this->belongsTo('App\User','id');
+		return $this->belongsTo('App\User','staff_id');
 	}
 	
 	public function role(){

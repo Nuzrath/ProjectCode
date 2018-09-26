@@ -10,10 +10,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th>user id</th>
+          <th>User id</th>
           <th>User Name</th>
-          <th>password </th>
-          <th>role </th>
+          <th>Password </th>
+          <th>Role </th>
+          <th>Status</th>
           <th>created </th>
           <th>updated </th>
           
@@ -28,6 +29,7 @@
             <td>{{$user->email}}</td>
             <td>{{$user->password}}</td>
             <td>{{$user->role->name}}</td>
+            <td>{{$user->status=1?"Active":"Not Active"}}</td>
             <td>{{$user->created_at->diffForHumans()}}</td>
             <td>{{$user->updated_at->diffForHumans()}}</td>
         

@@ -32,8 +32,9 @@ class AdminSubjectController extends Controller
     {
         //pullout subject details from db
        // $subjects = Subject::pluck('name','subject_id')->all();
+       $subject = Subject::findOrNew('name');
         
-        return view('admin.subjects.create');
+        return view('admin.subjects.create',compact('subject'));
     }
 
     /**
@@ -74,6 +75,7 @@ class AdminSubjectController extends Controller
     public function edit($id)
     {
         //
+        return redirect('admin.subjects.edit');
     }
 
     /**
@@ -86,6 +88,7 @@ class AdminSubjectController extends Controller
     public function update(Request $request, $id)
     {
         //
+     
     }
 
     /**

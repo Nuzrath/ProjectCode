@@ -22,7 +22,8 @@
         @if($subjects)
           @foreach ($subjects as $subject)
           <tr>
-            <td>{{$subject->subject_id}}</td>
+            <td>{{$subject->id}}</td>
+            {{--  <td><a href="{{ route('subject.edit') }}">{{$subject->name}}</td>  --}}
             <td>{{$subject->name}}</td>
             <td>{{$subject->created_at->diffForHumans()}}</td>
             <td>{{$subject->updated_at->diffForHumans()}}</td>
